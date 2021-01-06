@@ -1,0 +1,13 @@
+{
+	"name": "SMT-Kata",
+	"description": "SMT's Kata Exercises for Developers",
+	"repository" :
+	{	"type" : "git",
+		"url" : "https://github.com/smtadmin/SMT-Kata.git"
+	},
+	"config": {
+    	"commitizen": {
+      		"path": "cz-conventional-changelog"
+    	}
+    }
+}
