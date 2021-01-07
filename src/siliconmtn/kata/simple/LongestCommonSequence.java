@@ -3,7 +3,8 @@ package siliconmtn.kata.simple;
 /****************************************************************************
  * <b>Title</b>: LongestCommonSequence.java
  * <b>Project</b>: _Sandbox
- * <b>Description: </b> Given two strings, write a method that finds the longest common sub-sequence.
+ * <b>Description: </b> Given two strings, write a method that finds the longest 
+ * common sub-sequence.  No COLLECTIONS or other libraries are needed
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
@@ -21,6 +22,18 @@ public class LongestCommonSequence {
 	public static void main(String[] args) {
 		String one = "Over hill over dale";
 		String two = "James is old and over the hill";
+		System.out.println(findLongestCommonSequence(one, two));
+		
+		one = "a long time ago in a galaxy far far away";
+		two = "there is going to be a time at the movie";
+		System.out.println(findLongestCommonSequence(one, two));
+		
+		one = "the denver broncos really suck this year";
+		two = "the year 20220 has been really crappy";
+		System.out.println(findLongestCommonSequence(one, two));
+		
+		one = "cookies are realy yummy, especially chocolate chips";
+		two = "browser can track usage through the use of cookies";
 		System.out.println(findLongestCommonSequence(one, two));
 	}
 
