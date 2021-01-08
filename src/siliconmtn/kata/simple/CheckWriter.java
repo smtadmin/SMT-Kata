@@ -6,7 +6,7 @@ import java.util.Map;
 
 /****************************************************************************
  * <b>Title</b>: CheckWriter.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b>
  * Given a currency value output the English equivalent as written on a check:
  * 

@@ -5,7 +5,7 @@ import java.util.List;
 
 /****************************************************************************
  * <b>Title</b>: PrimeNumber.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> Create a program to print all of the prime numbers 
  * between 1 and 100.  Do not use any Math class functions.
  * <b>Copyright:</b> Copyright (c) 2021

@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: TripleUp.java 
- * <b>Project</b>: _Sandbox 
+ * <b>Project</b>: SMT-Kata 
  * <b>Description: </b> Return true if the array contains, somewhere, three 
  * increasing adjacent numbers like .... 4, 5, 6, ... or 23, 24, 25.
  * <b>Copyright:</b> Copyright (c) 2021 

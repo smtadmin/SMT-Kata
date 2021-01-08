@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: PalindromeSubstring.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> Checks a given string to find the largest palindrome contained inside
  * the word.  Returns an empty string if no palindrome. Strings may be used, but no collections or
  * String builders.  

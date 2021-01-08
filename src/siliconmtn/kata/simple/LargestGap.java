@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: LargestGap.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> Given an array of integers, return the largest gap between 
  * the sorted elements of the array.  For example, consider the array: 
  * [9, 4, 26, 26, 0, 0, 5, 20, 6, 25, 5] 

@@ -8,7 +8,7 @@ import java.util.Map;
 
 /****************************************************************************
  * <b>Title</b>: RomanNumerals.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> Translate a number into its roman numeral counterpart.
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies

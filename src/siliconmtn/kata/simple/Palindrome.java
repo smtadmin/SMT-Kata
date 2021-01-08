@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: Palindrome.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> This program does not use any API method instead it uses 
  * division and remainder operator of Java programming language to determine if 
  * number is palindrome or not.  No Strings, StringBuilders, or Collections are allowed.  

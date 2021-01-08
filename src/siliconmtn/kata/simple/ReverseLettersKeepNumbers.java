@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: MissingNumber.java 
- * <b>Project</b>: _Sandbox 
+ * <b>Project</b>: SMT-Kata 
  * <b>Description: </b> Create a method that reverses letters in a string but 
  * keeps digits in their current order.
  * <b>Copyright:</b> Copyright (c) 2020 

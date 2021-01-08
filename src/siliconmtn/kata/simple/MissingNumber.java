@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: MissingNumber.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> In this Java puzzle, you have a series of numbers start 
  * (e.g. 1….N) and exactly one number in this series is missing. You have to 
  * write a java program to find missing number from series

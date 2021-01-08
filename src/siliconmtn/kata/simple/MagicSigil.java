@@ -6,7 +6,7 @@ import java.util.Set;
 
 /****************************************************************************
  * <b>Title</b>: MagicSigil.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> A magic sigil is a glyph which represents a desire one wishes 
  * to manifest in their lives. There are many ways to create a sigil, but the 
  * most common is to write out a specific desire (e.g. "I HAVE WONDERFUL FRIENDS WHO LOVE ME"), 

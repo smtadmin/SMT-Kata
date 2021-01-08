@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: MissingLetter.java 
- * <b>Project</b>: _Sandbox 
+ * <b>Project</b>: SMT-Kata 
  * <b>Description: </b> Create a method that takes an array of increasing letters 
  * and return the missing letter.  Tests will always have exactly one letter missing.
  * The length of the test array will always be at least two.

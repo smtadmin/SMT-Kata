@@ -2,7 +2,7 @@ package siliconmtn.kata.simple;
 
 /****************************************************************************
  * <b>Title</b>: Pangram.java
- * <b>Project</b>: _Sandbox
+ * <b>Project</b>: SMT-Kata
  * <b>Description: </b> Determine if a sentence is a pangram. A pangram 
  * (Greek: παν γράμμα, pan gramma, "every letter")
  * is a sentence using every letter of the alphabet at least once. The best known English pangram is: 
