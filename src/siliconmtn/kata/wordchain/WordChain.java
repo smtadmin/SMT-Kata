@@ -1,13 +1,12 @@
 package siliconmtn.kata.wordchain;
 
 // JDK 8.x
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+
+// Kata Imports
+import siliconmtn.kata.util.Dictionary;
 
 
 /****************************************************************************
@@ -38,16 +37,11 @@ import java.util.TreeSet;
 public class WordChain {
 
 	/**
-	 * Location of the dictionary
-	 */
-	public static final String RESOURCE = "./dictionary.txt";
-	
-	/**
 	 * Entry point to run the word chain program
 	 * @param args
 	 */
     public static void main( String [] args ) throws IOException {
-    	WordchainFlow wc = new WordchainFlow(loadDict(), 50);
+    	WordchainFlow wc = new WordchainFlow(Dictionary.getDictionary(), 50);
     	Map<String, String> words = new LinkedHashMap<>();
     	words.put("cat", "dog");
     	words.put("lead", "gold");
@@ -67,23 +61,4 @@ public class WordChain {
     	
     	System.out.println("Wordchain Complete");
     }
-
-    /**
-     * Loads the dictionary as a String array
-     * @return
-     * @throws IOException 
-     */
-    public static String[] loadDict() throws IOException {
-    	InputStreamReader isr = new InputStreamReader(  WordChain.class.getResourceAsStream(RESOURCE));
-        try ( BufferedReader reader = new BufferedReader(isr)) {
-            Set<String> dict = new TreeSet<>();
-            String s;
-            while ( (s = reader.readLine() ) !=null ) {
-                dict.add(s);
-            }
-            
-            return dict.toArray(new String[0]);
-        }
-    }
-
 }
