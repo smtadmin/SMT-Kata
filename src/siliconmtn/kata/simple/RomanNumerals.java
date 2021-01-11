@@ -1,4 +1,4 @@
-package siliconmtn.kata.simple;
+ package siliconmtn.kata.simple;
 
 // JDK 8.x
 import java.util.ArrayList;
@@ -62,6 +62,8 @@ public class RomanNumerals {
 		for (int i = 0; i < numeralKeys.size(); i++) {
 			int val = numeralKeys.get(i);
 			int numVal = number/val;
+			
+			// Loop the number of elements for the given numerals value.
 			if (numVal > 0) {
 				for(int x = 0; x < numVal; x++) {
 					roman.append(numerals.get(val));
@@ -70,6 +72,7 @@ public class RomanNumerals {
 				number -= (val * numVal);
 			} 
 
+			// Check to see if we need to subtract 1 from the next version (IX for 9)
 			if (number > 0 && (number + 1) == val) {
 				int item = (i + 2) > 6 ? 6 : i + 2;
 				roman.append(numerals.get(numeralKeys.get(item)));
