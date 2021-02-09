@@ -44,7 +44,7 @@ class SortKataTest {
 		people.add(p2);
 		
 		p3 = new SortKata();
-		p3.setId("1");
+		p3.setId("112345");
 		p3.setAge(56);
 		p3.setName("James");
 		people.add(p3);
@@ -69,7 +69,7 @@ class SortKataTest {
 		
 		Collections.sort(people);
 		assertEquals(null, people.get(0).getId());
-		assertEquals("1", people.get(1).getId());
+		assertEquals("112345", people.get(1).getId());
 		
 		people.sort(p1.new AgeComparator());
 		assertEquals(0, people.get(0).getAge());
@@ -81,9 +81,9 @@ class SortKataTest {
 
 		
 		assertEquals("123|Andy|21",  p1.toString());
-		assertEquals(150,  p1.hashCode());
-		assertEquals(106,  p2.hashCode());
-		assertEquals(49,  p3.hashCode());
+		assertEquals(1418,  p1.hashCode());
+		assertEquals(1401,  p2.hashCode());
+		assertEquals(1707,  p3.hashCode());
 	}
 
 }

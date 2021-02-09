@@ -78,7 +78,9 @@ public class SortKata implements Comparable<SortKata> {
 	 */
 	@Override
 	public int hashCode() {
-		return HashCodeUtil.hash(this.getId());
+		return HashCodeUtil.hash(this.getId())
+			+ HashCodeUtil.hash(this.getName())
+			+ HashCodeUtil.hash(getAge());
 	}
 	
 	/*
