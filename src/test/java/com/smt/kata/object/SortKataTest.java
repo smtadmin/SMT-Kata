@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 /****************************************************************************
  * <b>Title</b>: SortKataTest.java
  * <b>Project</b>: SMT-Kata
- * <b>Description: </b> CHANGE ME!!
+ * <b>Description: </b> Test Class for the sort kata challenge
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
