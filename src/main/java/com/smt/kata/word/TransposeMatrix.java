@@ -12,32 +12,10 @@ package com.smt.kata.word;
  * Given a matrix mtx, implement a function that returns the complete sentence as 
  * a string, with the words separated by a space between them.
  * 
- * Examples
- * transposeMatrix([
- * ["I","Tesh"],
- * ["so","very"],
- *   ["love","much!"]
- * ]) ➞ "I so love Tesh very much!"
- * 
- * transposeMatrix([
- *   ["My","evolves","on"],
- *   ["world","solely","Tesha's."]
- * ]) ➞ "My world evolves solely on Tesha's."
- * 
- * transposeMatrix([
- *   ["Enter"],
- *   ["the"],
- *   ["Matrix!"]
- * ]) ➞ "Enter the Matrix!"
- * 
- * transposeMatrix([
- *   ["The","are"],
- *   ["columns","rows."]
- * ]) ➞ "The columns are rows."
- * 
  * Notes
  * All given matrices are regular, as to say that each column has the same length.
- * Punctuation is already given, you just have to add the spaces in the returned string.
+ * Punctuation is already given.
+ * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 

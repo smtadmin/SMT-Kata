@@ -58,12 +58,12 @@ class TransposeMatrixTest {
 	@Test
 	void testParseDouble() throws Exception {
 		String[][] matrix = {
-			{ "I","Tesh" },
-			{ "so","very" },
-			{ "love","much!" }
+			{ "I","working" },
+			{ "really","at" },
+			{ "love","SMT!" }
 		};
 		
-		assertEquals("I so love Tesh very much!", tm.parse(matrix));
+		assertEquals("I really love working at SMT!", tm.parse(matrix));
 	}
 	
 	/**
@@ -73,10 +73,10 @@ class TransposeMatrixTest {
 	void testParseTriple() throws Exception {
 		String[][] matrix = {
 			{ "My","evolves","on" },
-			{ "world","solely","Tesha's." }
+			{ "world","solely","coding." }
 		};
 		
-		assertEquals("My world evolves solely on Tesha's.", tm.parse(matrix));
+		assertEquals("My world evolves solely on coding.", tm.parse(matrix));
 	}
 	
 	/**
