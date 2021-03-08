@@ -51,10 +51,28 @@ public class ReverseWord {
 	 * @return
 	 */
 	public String processPhrase(String phrase) {
+		// Check for empty
 		if (StringUtil.isEmpty(phrase)) return "";
+
+		// Loop the phrase and separate the words
+		List<String> words = parseWords(phrase);
+		
+		// Loop the results backwards and append to the return phrase
+		StringBuilder retPhrase = new StringBuilder();
+		for (int i= words.size() - 1; i > -1; i--) retPhrase.append(words.get(i)).append(" ");
+		
+		// Make sure to trim the return phrase to remove the extra space at the end
+		return retPhrase.toString().trim();
+	}
+	
+	/**
+	 * Loop the phrase and separate the words
+	 * @param phrase
+	 * @return
+	 */
+	protected List<String> parseWords(String phrase) {
 		List<String> words = new ArrayList<>();
 		StringBuilder holder = new StringBuilder();
-		
 		for (char c : phrase.trim().toCharArray()) {
 			if (c == ' ' && holder.length() > 0) {
 				words.add(holder.toString());
@@ -67,8 +85,6 @@ public class ReverseWord {
 		// Cleanup the last word
 		words.add(holder.toString());
 		
-		StringBuilder retPhrase = new StringBuilder();
-		for (int i= words.size() - 1; i > -1; i--) retPhrase.append(words.get(i)).append(" ");
-		return retPhrase.toString().trim();
+		return words;
 	}
 }
