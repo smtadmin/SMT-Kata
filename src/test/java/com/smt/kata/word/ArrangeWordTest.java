@@ -30,6 +30,7 @@ class ArrangeWordTest {
 		
 		// Evaluate simple word
 		List<String> permutations = aw.getPermutations("god");
+		System.out.println(permutations);
 		assertEquals(6, permutations.size());
 		assertTrue(permutations.contains("odg"));
 		assertTrue(permutations.contains("dog"));

@@ -18,9 +18,10 @@ import org.apache.commons.lang3.StringUtils;
  * If you were to combine these characters into the string "abc", the corresponding 
  * binary would be 011000010110001001100011. Use the resources tab for more 
  * info on how to approach this.
-
-Notes
-If you are given an empty string as input, you must also return an empty string. Otherwise, the input will always be a valid binary string.
+ * 
+ * Notes
+ * If you are given an empty string as input, you must also return an empty string. 
+ * Otherwise, the input will always be a valid binary string.
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
