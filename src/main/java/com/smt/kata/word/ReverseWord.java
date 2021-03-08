@@ -19,13 +19,14 @@ import com.siliconmtn.data.text.StringUtil;
  * reverseWords("  hello world!  ") ➞ "world! hello"
  * 
  * reverseWords("a good   example") ➞ "example good a"
+ * 
  * Notes
  * A word is defined as a sequence of non-space characters.
  * The input string may contain leading or trailing spaces. However, your reversed 
  * string should not contain leading or trailing spaces. You need to reduce multiple 
  * spaces between two words to a single space in the reversed string. You *** MAY NOT ***
- * utilize String.split() or parsing methods.  You mut loop the phrase and process in a 
- * loop.  You may use collections to store words if desired.
+ * utilize String.split() or parsing methods.  You must loop the phrase and process 
+ * the characters in a loop.  You may use collections to store words if desired.
  * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
