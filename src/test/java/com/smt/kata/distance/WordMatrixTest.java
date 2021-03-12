@@ -62,6 +62,10 @@ class WordMatrixTest {
 	@Test
 	void testContainsStringPartial() throws Exception {
 		assertTrue(wm.contains("ass"));
+		assertTrue(wm.contains("spin"));
+		assertTrue(wm.contains("hello!"));
+		assertTrue(wm.contains("c"));
+		assertTrue(wm.contains("!"));
 	}
 	
 	/**
@@ -69,7 +73,9 @@ class WordMatrixTest {
 	 */
 	@Test
 	void testContainsStringMissing() throws Exception {
-		assertFalse(wm.contains("hello"));
+		assertFalse(wm.contains("hellcdoaga"));
+		assertFalse(wm.contains("cdcsdcdcdcd"));
+		assertFalse(wm.contains(" "));
 	}
 	
 	/**
@@ -78,6 +84,7 @@ class WordMatrixTest {
 	@Test
 	void testContainsStringBackwards() throws Exception {
 		assertTrue(wm.contains("AN"));
+		assertTrue(wm.contains("baem!"));
 	}
 	
 	/**
@@ -86,5 +93,19 @@ class WordMatrixTest {
 	@Test
 	void testContainsStringBackwardsAgain() throws Exception {
 		assertTrue(wm.contains("ssam"));
+	}
+	
+	// ------------------------------------------------------------------------
+	/****       Bonus Unit Tests     *******/
+	
+	/**
+	 * Test method for {@link com.smt.kata.distance.WordMatrix#contains()}.
+	 */
+	@Test
+	void testContainsStringDiagonalSuccess() throws Exception {
+		assertTrue(wm.contains("bosses"));
+		assertTrue(wm.contains("rub"));
+		assertTrue(wm.contains("lob"));
+		assertTrue(wm.contains("lie"));
 	}
 }
