@@ -56,14 +56,23 @@ public class RomanNumeralMath {
 	};
 	
 	/**
+	 * Validates the inputs
+	 * @param first Roman numeral to add
+	 * @param second Roman numeral to add
+	 * @return boolean if the inputs are valid or invalid
+	 */
+	private boolean isInputValid(String first, String second) {
+		return (! (StringUtil.isEmpty(first) || "0".equals(first) || StringUtil.isEmpty(second) || "0".equals(second)));
+	}
+	
+	/**
 	 * Takes two roman numerals and adds them together
-	 * @param first
-	 * @param second
-	 * @return
+	 * @param first Roman numeral to add
+	 * @param second Roman numeral to add
+	 * @return Roman numeral that adds the 2 values
 	 */
 	public String add(String first, String second) {
-		if (StringUtil.isEmpty(first) || "0".equals(first)) return "";
-		if (StringUtil.isEmpty(second) || "0".equals(second)) return "";
+		if (!isInputValid(first, second)) return "";
 		
 		int firstInt = getBase10FromRoman(first);
 		int secondInt = getBase10FromRoman(second);
@@ -74,13 +83,12 @@ public class RomanNumeralMath {
 	/**
 	 * Takes two roman numerals and subtracts them.  Absolute value is
 	 * used to ensure a positive number
-	 * @param first
-	 * @param second
+	 * @param first Roman numeral to subtract
+	 * @param second Roman numeral to subtract
 	 * @return
 	 */
 	public String subtract(String first, String second) {
-		if (StringUtil.isEmpty(first) || "0".equals(first)) return "";
-		if (StringUtil.isEmpty(second) || "0".equals(second)) return "";
+		if (!isInputValid(first, second)) return "";
 		
 		int firstInt = getBase10FromRoman(first);
 		int secondInt = getBase10FromRoman(second);
