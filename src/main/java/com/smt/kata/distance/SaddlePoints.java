@@ -1,4 +1,4 @@
-package com.smt.kata.distance;
+ package com.smt.kata.distance;
 
 // JDK 11.x
 import java.util.ArrayList;
@@ -80,7 +80,7 @@ public class SaddlePoints {
 	 */
 	public void checkColumnPoints(List<int[]> points) {
 		for (int[] point : points) {
-			// Gte the column data
+			// Get the column data
 			int[] col = getColumn(point[0]);
 			
 			// Get the smallest and if it matches the coord point, add to saddle point
@@ -156,7 +156,7 @@ public class SaddlePoints {
 	
 	/**
 	 * Gets the saddle points
-	 * @return Map of column number/row number for all saddle points
+	 * @return Map of column number/row number / value for all saddle points
 	 */
 	public List<int[]> getCoordinates() {
 		return coords;
