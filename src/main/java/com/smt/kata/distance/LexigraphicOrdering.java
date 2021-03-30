@@ -90,7 +90,7 @@ public class LexigraphicOrdering {
 		char[][] cols = new char[data.length][];
 		for (int i = 0; i < data.length; i++) {
 			StringBuilder row = new StringBuilder();
-			for (int x = 0; x < data.length; x++) {
+			for (int x = 0; x < data[i].length; x++) {
 				if (! removeColumns.contains(x))
 					row.append(data[i][x]);
 			}
