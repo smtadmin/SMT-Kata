@@ -9,11 +9,11 @@ import java.util.Map;
  * <b>Project:</b> SMT-Kata
  * <b>Description:</b> Character Mapping
  * Given a mapping of digits to letters (as in a phone number), and a digit 
- * character, return all possible letters the number could represent. You can assume 
+ * character, concatenate the corresponding location between the arrays. You can assume 
  * each valid number in the mapping is a single digit.
  * 
  * For example if {2: ['a', 'b', 'c'], 3: ['d', 'e', 'f'], …} then '23' 
- * should return ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+ * should return ["ad", "be", "cf"].
  * 
  * You may use java.util.Map and any of it's implementing classes.  No other 
  * collections may be used or anything other than the standard java imports
