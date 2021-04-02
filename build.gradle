@@ -32,7 +32,7 @@ dependencies {
 	implementation 'org.mockito:mockito-inline:3.7.0'
 		    
     // SMT Base Libs
-	implementation 'com.siliconmtn:spacelibs-java:1.0.0'
+	implementation 'com.siliconmtn:spacelibs-java:1.1.0'
 	
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
