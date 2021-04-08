@@ -1,4 +1,4 @@
-package com.smt.kata.number;
+package com.smt.kata.math;
 
 // Junit 5
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 class CountingParensTest {
 
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculate() throws Exception {
@@ -29,7 +29,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateEmpty() throws Exception {
@@ -38,7 +38,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateNull() throws Exception {
@@ -47,7 +47,7 @@ class CountingParensTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateMismatch() throws Exception {
@@ -56,7 +56,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateMismatchLeftOnly() throws Exception {
@@ -65,7 +65,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateMismatchRightOnly() throws Exception {
@@ -74,7 +74,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateMismatchWithChars() throws Exception {
@@ -83,7 +83,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateNested() throws Exception {
@@ -92,7 +92,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateNestedExtraLeft() throws Exception {
@@ -101,7 +101,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateNestedExtraRight() throws Exception {
@@ -110,7 +110,7 @@ class CountingParensTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.number.CountingParens#calculate(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.math.CountingParens#calculate(java.lang.String)}.
 	 */
 	@Test
 	void testCalculateNestedComplex() throws Exception {

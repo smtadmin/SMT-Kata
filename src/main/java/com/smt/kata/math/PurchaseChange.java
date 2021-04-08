@@ -57,7 +57,7 @@ public class PurchaseChange {
 		// Make sure the money given is greater than the purchase amount
 		if (totalChange < 1) return change;
 		
-		// Lop the currencies and calculate the change for each
+		// Loop the currencies and calculate the change for each
 		for (Currency item : Currency.values()) {
 			int value = item.getCurrencyValue();
 			if (value > totalChange) continue;

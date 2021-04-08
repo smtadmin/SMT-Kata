@@ -1,4 +1,4 @@
-package com.smt.kata.number;
+package com.smt.kata.math;
 
 // Spacelibs 1.x
 import com.siliconmtn.data.text.StringUtil;
