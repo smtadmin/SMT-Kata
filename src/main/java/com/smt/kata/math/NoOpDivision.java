@@ -5,7 +5,7 @@ package com.smt.kata.math;
  * <b>Project:</b> SMT-Kata
  * <b>Description:</b> No Operator Division
  * 
- * Implement division of two positive integers without using the division, 
+ * Implement division of two positive and/or negative integers without using the division, 
  * multiplication, or modulus operators. Return the quotient as an integer, 
  * ignoring the remainder.  The sign of the dividend and divisor must be taken into
  * account.
