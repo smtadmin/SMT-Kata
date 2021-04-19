@@ -86,7 +86,6 @@ class TagParserTest {
 	@Test
 	void testEvaluateTagsInner() throws Exception {
 		List<String> tags = tp.evaluateTags("<div><span>Another Tag</span><b>Hello World</b></div>");
-		System.out.println(tags);
 		assertEquals(3, tags.size());
 		assertEquals("<div><span>Another Tag</span><b>Hello World</b></div>", tags.get(0));
 		assertEquals("<span>Another Tag</span>", tags.get(1));

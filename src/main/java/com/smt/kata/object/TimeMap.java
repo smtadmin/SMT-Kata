@@ -7,8 +7,10 @@ import java.util.Arrays;
  * <b>Title:</b> TimeMap.java
  * <b>Project:</b> SMT-Kata
  * <b>Description:</b> TimeMap
+ * 
  * Write a map implementation with a get function that lets you retrieve the 
- * value of a key at a particular time.
+ * value of a key at a particular time.  You may NOT use collections.  You should 
+ * utilize an array to store the data
  * 
  * It should contain the following methods:
  * 
@@ -37,6 +39,9 @@ import java.util.Arrays;
  * d.set(1, 1, 0) # set key 1 to value 1 at time 0
  * d.set(1, 2, 0) # set key 1 to value 2 at time 0
  * d.get(1, 0) # get key 1 at time 0 should be 2
+ * 
+ * For this Kata, you may not use ANY imports in the collections (java.util.*), 
+ * EXCEPT you may java.util.Arrays.  You may NOT use inner classes for this Kata
  * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
@@ -127,10 +132,13 @@ public class TimeMap<K,V> {
 	 * @param time Index of the TimeMap
 	 */
 	public void set(K key, V value, int time) {
-		if ((currSize % defaultSize) < 2) {
-			items = Arrays.copyOf(items, currSize + 1 + defaultSize);
+		
+		// If the array is filled, create an new array
+		if ((currSize % defaultSize) < 1) {
+			items = Arrays.copyOf(items, currSize + defaultSize);
 		}
 		
+		// Add a new TimeMap to the array
 		items[currSize++] = new TimeMap<>(key, value, time);
 	}
 	
@@ -140,7 +148,7 @@ public class TimeMap<K,V> {
 	 * @return TimeMap in the provided index.  Null if OOB or missing
 	 */
 	public TimeMap<K,V> get(int index) {
-		if (index > items.length) return null;
+		if (index > items.length || index < 0) return null;
 		return items[index];
 	}
 	

@@ -46,8 +46,6 @@ public class CorrectTheTime {
 			sec = Integer.parseInt(parts[2]);
 		}
 		
-
-		System.out.println(minute);
 		if (Integer.parseInt(parts[1]) >= 60) {
 			minute += (Integer.parseInt(parts[1]) - 60);
 			hour++;

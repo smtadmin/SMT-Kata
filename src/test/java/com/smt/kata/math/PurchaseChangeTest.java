@@ -57,7 +57,6 @@ class PurchaseChangeTest {
 	@Test
 	void testCalculateLarge() throws Exception {
 		Map<Currency, Integer> change = pc.calculate(2.37, 20.00);
-		System.out.println(change);
 		assertEquals(1, change.get(Currency.TEN_DOLLAR));
 		assertEquals(1, change.get(Currency.FIVE_DOLLAR));
 		assertEquals(2, change.get(Currency.DOLLAR));
@@ -72,7 +71,6 @@ class PurchaseChangeTest {
 	@Test
 	void testCalculateAll() throws Exception {
 		Map<Currency, Integer> change = pc.calculate(2.32, 20.00);
-		System.out.println(change);
 		assertEquals(1, change.get(Currency.TEN_DOLLAR));
 		assertEquals(1, change.get(Currency.FIVE_DOLLAR));
 		assertEquals(2, change.get(Currency.DOLLAR));

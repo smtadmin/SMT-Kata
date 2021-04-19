@@ -38,7 +38,7 @@ public class PatternDecoderTest {
 		patterns.put("111d", new ArrayList<>());
 		patterns.put("444", Arrays.asList("ddd"));
 		patterns.put("414", Arrays.asList("dad", "dn"));
-		patterns.put("6666", Arrays.asList("gggg"));
+		patterns.put("6666", Arrays.asList("ffff"));
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class PatternDecoderTest {
 		for (Map.Entry<String, List<String>> entry : patterns.entrySet()) {
 			List<String> results = entry.getValue();
 			List<String> matching = pd.decodePattern(entry.getKey());
-			
+
 			assertEquals(results.size(), matching.size());
 			for (String pattern : matching) {
 				assertTrue(results.contains(pattern));
