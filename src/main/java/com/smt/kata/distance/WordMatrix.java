@@ -128,9 +128,8 @@ public class WordMatrix {
 			int x = i;
 			word = new StringBuilder();
 			for (int j = 0; j < matrix.length; j++) {
-				int y = j;
 				if (x + 1 > matrix.length) break;
-				word.append(matrix[y++][x++]);
+				word.append(matrix[j][x++]);
 			}
 			
 			words.add(word.toString());
@@ -148,9 +147,8 @@ public class WordMatrix {
 			int x = i;
 			word = new StringBuilder();
 			for (int j = 0; j < matrix.length; j++) {
-				int y = j;
 				if (x + 1 > matrix.length) break;
-				word.append(matrix[x++][y++]);
+				word.append(matrix[x++][j]);
 			}
 			
 			words.add(word.toString());

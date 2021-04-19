@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 // Apache commons 3.x
 import org.apache.commons.lang3.StringUtils;
@@ -76,11 +77,10 @@ public class ShortURL {
 	}
 	
 	/**
-	 * Gets a rendom character from the char list
+	 * Gets a random character from the char list
 	 * @return
 	 */
 	public char getRandom() {
-		int random = (int) (Math.random() * charList.size());
-		return charList.get(random);
+		return charList.get(new Random().nextInt(charList.size()));
 	}
 }

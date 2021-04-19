@@ -50,8 +50,10 @@ public class StrongPassword {
 	 */
 	public static final int MIN_PASSWORD_LENGTH = 8;
 	
-	
-	public static final List<Character> SPECIAL_CHARS = Arrays.asList(new Character[]{ '!','@','#','$','%','^','&','*','(',')','-','+' });
+	/**
+	 * Protected characters in use
+	 */
+	protected static final List<Character> SPECIAL_CHARS = Arrays.asList('!','@','#','$','%','^','&','*','(',')','-','+' );
 
 	// Members
 	private int minPasswordLength;
