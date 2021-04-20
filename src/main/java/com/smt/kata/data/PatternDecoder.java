@@ -131,8 +131,8 @@ public class PatternDecoder {
 		Arrays.fill(elements, 1);
 		
 		// Process length 3
-		if (length == 3) processLengthThree(patterns, vals, elements, length);
-		else if (length == 4) processLengthFour(patterns, vals, elements, length);
+		if (length == 3) processLengthThree(patterns, vals, elements);
+		else if (length == 4) processLengthFour(patterns, vals, elements);
 		
 		return vals;
 	}
@@ -144,7 +144,7 @@ public class PatternDecoder {
 	 * @param elements
 	 * @param length
 	 */
-	private void processLengthThree(List<List<Integer>> patterns, List<List<Integer>> vals, Integer[] elements, int length) {
+	private void processLengthThree(List<List<Integer>> patterns, List<List<Integer>> vals, Integer[] elements) {
 			if (patterns.get(0).contains(1)) vals.add(Arrays.asList(elements));
 			if (patterns.get(0).contains(2)) vals.add(Arrays.asList(2,1));
 			if (patterns.get(1).contains(2)) vals.add(Arrays.asList(1,2));
@@ -157,7 +157,7 @@ public class PatternDecoder {
 	 * @param elements
 	 * @param length
 	 */
-	private void processLengthFour(List<List<Integer>> patterns, List<List<Integer>> vals, Integer[] elements, int length) {
+	private void processLengthFour(List<List<Integer>> patterns, List<List<Integer>> vals, Integer[] elements) {
 		if (patterns.get(0).contains(1)) vals.add(Arrays.asList(elements));
 		if (patterns.get(0).contains(2) && patterns.get(2).contains(2)) vals.add(Arrays.asList(2, 2));
 		if (patterns.get(0).contains(2)) vals.add(Arrays.asList(2,1,1));

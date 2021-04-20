@@ -13,9 +13,8 @@ import java.io.ObjectOutputStream;
  * <b>Project:</b> SMT-Kata
  * <b>Description:</b> This Kata determines whether or not a class instance (Object) 
  * can be serialized.  Generally, the best way to determine this is to serialize
- * and deserialize the original object and compare it back.
- * 
- * You can only use standard JDK in the lang, util and io packages.  
+ * and deserialize the original object and compare it back.  You will create a 
+ * serialized object using the standard jdk in the lang, util and io packages.  
  * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
