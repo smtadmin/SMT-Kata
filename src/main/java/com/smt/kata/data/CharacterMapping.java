@@ -2,6 +2,7 @@ package com.smt.kata.data;
 
 // JDK 11.x
 import java.io.InvalidObjectException;
+import java.util.Arrays;
 import java.util.Map;
 
 /****************************************************************************
@@ -91,9 +92,6 @@ public class CharacterMapping {
 			if (val != null) length = i + 1;
 		}
 		
-		String[] newResults = new String[length];
-		for (int i=0; i < length; i++) newResults[i] = results[i];
-		
-		return newResults;
+		return Arrays.copyOf(results, length);
 	}
 }

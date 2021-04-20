@@ -28,37 +28,40 @@ public class PatternDecoder {
 	/**
 	 * Character to value map
 	 */
-	private Map<String, String> charMap = new LinkedHashMap<>() {
-		private static final long serialVersionUID = 1L;
-		{
-			put("1", "a");
-			put("2", "b");
-			put("3", "c");
-			put("4", "d");
-			put("5", "e");
-			put("6", "f");
-			put("7", "g");
-			put("8", "h");
-			put("9", "i");
-			put("10", "j");
-			put("11", "k");
-			put("12", "l");
-			put("13", "m");
-			put("14", "n");
-			put("15", "o");
-			put("16", "p");
-			put("17", "q");
-			put("18", "r");
-			put("19", "s");
-			put("20", "t");
-			put("21", "u");
-			put("22", "v");
-			put("23", "w");
-			put("24", "x");
-			put("25", "y");
-			put("26", "z");
-		}
-	};
+	private Map<String, String> charMap = new LinkedHashMap<>();
+	
+	/**
+	 * Initializes the char map
+	 */
+	public PatternDecoder() {
+		super();
+		charMap.put("1", "a");
+		charMap.put("2", "b");
+		charMap.put("3", "c");
+		charMap.put("4", "d");
+		charMap.put("5", "e");
+		charMap.put("6", "f");
+		charMap.put("7", "g");
+		charMap.put("8", "h");
+		charMap.put("9", "i");
+		charMap.put("10", "j");
+		charMap.put("11", "k");
+		charMap.put("12", "l");
+		charMap.put("13", "m");
+		charMap.put("14", "n");
+		charMap.put("15", "o");
+		charMap.put("16", "p");
+		charMap.put("17", "q");
+		charMap.put("18", "r");
+		charMap.put("19", "s");
+		charMap.put("20", "t");
+		charMap.put("21", "u");
+		charMap.put("22", "v");
+		charMap.put("23", "w");
+		charMap.put("24", "x");
+		charMap.put("25", "y");
+		charMap.put("26", "z");
+	}
 
 	/**
 	 * Ensures the parsed data is decodable
@@ -127,21 +130,39 @@ public class PatternDecoder {
 		Integer[] elements = new Integer[pattern.length()];
 		Arrays.fill(elements, 1);
 		
-		if (length == 3) {
+		// Process length 3
+		if (length == 3) processLengthThree(patterns, vals, elements);
+		else if (length == 4) processLengthFour(patterns, vals, elements);
+		
+		return vals;
+	}
+	
+	/**
+	 * Processes patterns with a length of 3
+	 * @param patterns
+	 * @param vals
+	 * @param elements
+	 * @param length
+	 */
+	private void processLengthThree(List<List<Integer>> patterns, List<List<Integer>> vals, Integer[] elements) {
 			if (patterns.get(0).contains(1)) vals.add(Arrays.asList(elements));
 			if (patterns.get(0).contains(2)) vals.add(Arrays.asList(2,1));
 			if (patterns.get(1).contains(2)) vals.add(Arrays.asList(1,2));
-		}
-		
-		if (length == 4) {
-			if (patterns.get(0).contains(1)) vals.add(Arrays.asList(elements));
-			if (patterns.get(0).contains(2) && patterns.get(2).contains(2)) vals.add(Arrays.asList(2, 2));
-			if (patterns.get(0).contains(2)) vals.add(Arrays.asList(2,1,1));
-			if (patterns.get(1).contains(2)) vals.add(Arrays.asList(1,2,1));
-			if (patterns.get(2).contains(2)) vals.add(Arrays.asList(1,1,2));
-		}
-		
-		return vals;
+	}
+	
+	/**
+	 * Processes patterns with a length of 4
+	 * @param patterns
+	 * @param vals
+	 * @param elements
+	 * @param length
+	 */
+	private void processLengthFour(List<List<Integer>> patterns, List<List<Integer>> vals, Integer[] elements) {
+		if (patterns.get(0).contains(1)) vals.add(Arrays.asList(elements));
+		if (patterns.get(0).contains(2) && patterns.get(2).contains(2)) vals.add(Arrays.asList(2, 2));
+		if (patterns.get(0).contains(2)) vals.add(Arrays.asList(2,1,1));
+		if (patterns.get(1).contains(2)) vals.add(Arrays.asList(1,2,1));
+		if (patterns.get(2).contains(2)) vals.add(Arrays.asList(1,1,2));
 	}
 	
 	/**

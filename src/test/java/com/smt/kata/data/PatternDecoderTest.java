@@ -24,7 +24,7 @@ import org.junit.jupiter.api.Test;
  * @since Feb 1, 2021
  * @updates:
  ****************************************************************************/
-public class PatternDecoderTest {
+class PatternDecoderTest {
 	
 	// Members
 	Map<String, List<String>> patterns;

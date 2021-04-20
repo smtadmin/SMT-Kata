@@ -74,6 +74,7 @@ class CharacterBoardTest {
 		CharacterBoard cb = new CharacterBoard(board1);
 		assertTrue(cb.exists("SEE"));
 		assertTrue(cb.exists("see"));
+		assertTrue(cb.exists("SCB"));
 	}
 
 	/**

@@ -49,8 +49,8 @@ public class PalindromeSubstring {
 	 */
 	private boolean isPalindrome(String val){
 		
-		String newVal = "";
-		for (int i=val.length()-1; i >= 0; i--) { newVal += val.charAt(i); }
+		StringBuilder newVal = new StringBuilder();
+		for (int i=val.length()-1; i >= 0; i--) { newVal.append(val.charAt(i)); }
 	    return newVal.toString().equalsIgnoreCase(val);
 	}
 
