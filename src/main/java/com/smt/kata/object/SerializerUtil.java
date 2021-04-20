@@ -31,6 +31,7 @@ public class SerializerUtil {
 	 * Determines if the passed object instance can be serialized
 	 * @param o Object to validate
 	 * @return True if the object can be successfully serialized and de-serialized
+	 * and is equal to the original object
 	 */
 	public boolean isSerializable(Object o) {
 		if (o == null) return false;
@@ -50,12 +51,13 @@ public class SerializerUtil {
 	 * @throws IOException thrown if the object instance can not be serialized
 	 */
 	public byte[] serialize(Object inst) throws IOException {
-	    ByteArrayOutputStream out = new ByteArrayOutputStream();
-	    ObjectOutputStream oos = new ObjectOutputStream(out);
-	    oos.writeObject(inst);
-	    oos.close();
+	    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+	    	try (ObjectOutputStream oos = new ObjectOutputStream(out)) {
+	    		oos.writeObject(inst);
+			    return out.toByteArray();
+	    	}
+	    }
 	    
-	    return out.toByteArray();
 	}
 
 	/**
@@ -67,9 +69,10 @@ public class SerializerUtil {
 	 */
 	public Object deserialize(byte[] pickled) 
 	throws IOException, ClassNotFoundException {
-	    InputStream in = new ByteArrayInputStream(pickled);
-	    ObjectInputStream ois = new ObjectInputStream(in);
-	    
-	    return ois.readObject();
+	    try (InputStream in = new ByteArrayInputStream(pickled)) {
+	    	try (ObjectInputStream ois = new ObjectInputStream(in)) {
+	    		return ois.readObject();
+	    	}
+	    }
 	}
 }
