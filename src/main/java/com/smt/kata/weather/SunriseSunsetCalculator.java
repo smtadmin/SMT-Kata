@@ -37,6 +37,7 @@ public class SunriseSunsetCalculator {
 	public static final String SUNRISE_SUNSET_URL = "https://api.sunrise-sunset.org/json?";
 	private SunriseSunsetVO results;
 	private String status;
+	
 	/**
 	 * 
 	 */
@@ -68,7 +69,7 @@ public class SunriseSunsetCalculator {
 		StringBuilder sb = new StringBuilder(SUNRISE_SUNSET_URL);
 		sb.append("lat=").append(lat).append("&lng=").append(lng).append("&date=");
 		sb.append(DateFormat.toFormattedString(DatePattern.DATE_DASH, date));
-		System.out.println(sb);
+		
 		// Retrieve the data
 		SMTHttpConnectionManager conn = new SMTHttpConnectionManager();
 		byte[] response = conn.getRequestData(sb.toString(), null, HttpConnectionType.GET);
