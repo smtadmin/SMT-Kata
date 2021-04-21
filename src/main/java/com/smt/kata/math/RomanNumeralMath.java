@@ -28,32 +28,35 @@ public class RomanNumeralMath {
 	/**
 	 * Map of the roman numerals to decimal conversion
 	 */
-	private static Map<Integer, String> ROMAN_NUMERALS = new LinkedHashMap<>() {
-		private static final long serialVersionUID = 1L; {
-			put(1000, "M");
-			put(500, "D");
-			put(100, "C");
-			put(50, "L");
-			put(10, "X");
-			put(5, "V");
-			put(1, "I");
-		}
-	};
+	protected final Map<Integer, String> romanNumerals = new LinkedHashMap<>();
 	
 	/**
 	 * Map of the roman numerals to decimal conversion
 	 */
-	private static Map<String, Integer> NUMERALS = new LinkedHashMap<>() {
-		private static final long serialVersionUID = 1L; {
-			put("M", 1000);
-			put("D", 500);
-			put("C", 100);
-			put("L", 50);
-			put("X", 10);
-			put("V", 5);
-			put("I", 1);
-		}
-	};
+	protected static final Map<String, Integer> numerals = new LinkedHashMap<>();
+	
+	
+	public RomanNumeralMath() {
+		super();
+		
+		// Initialize the roman numerals
+		romanNumerals.put(1000, "M");
+		romanNumerals.put(500, "D");
+		romanNumerals.put(100, "C");
+		romanNumerals.put(50, "L");
+		romanNumerals.put(10, "X");
+		romanNumerals.put(5, "V");
+		romanNumerals.put(1, "I");
+		
+		// Initalize the numerals
+		numerals.put("M", 1000);
+		numerals.put("D", 500);
+		numerals.put("C", 100);
+		numerals.put("L", 50);
+		numerals.put("X", 10);
+		numerals.put("V", 5);
+		numerals.put("I", 1);
+	}
 	
 	/**
 	 * Validates the inputs
@@ -107,11 +110,11 @@ public class RomanNumeralMath {
 		for (char c : roman.toCharArray()) {
 			String holder = String.valueOf(c);
 			if ("I".equals(prev) && ! "I".equals(holder))
-				total += NUMERALS.get(holder) - 2;
+				total += numerals.get(holder) - 2;
 			else if ("C".equals(prev) && "X".equals(holder))
-				total += NUMERALS.get(holder) - 20;
+				total += numerals.get(holder) - 20;
 			else
-				total += NUMERALS.get(holder);
+				total += numerals.get(holder);
 			
 			prev = holder;
 		}
@@ -126,7 +129,7 @@ public class RomanNumeralMath {
 	 */
 	private String getRomanNumeral(int number){
 		StringBuilder roman = new StringBuilder();
-		List<Integer> numeralKeys = new ArrayList<>(ROMAN_NUMERALS.keySet());
+		List<Integer> numeralKeys = new ArrayList<>(romanNumerals.keySet());
 		
 		// Loop the map of numeral
 		for (int i = 0; i < numeralKeys.size(); i++) {
@@ -136,7 +139,7 @@ public class RomanNumeralMath {
 			// Loop the number of elements for the given numerals value.
 			if (numVal > 0) {
 				for(int x = 0; x < numVal; x++) {
-					roman.append(ROMAN_NUMERALS.get(val));
+					roman.append(romanNumerals.get(val));
 				}
 				
 				number -= (val * numVal);
@@ -145,8 +148,8 @@ public class RomanNumeralMath {
 			// Check to see if we need to subtract 1 from the next version (IX for 9)
 			if (number > 0 && (number + 1) == val) {
 				int item = (i + 2) > 6 ? 6 : i + 2;
-				roman.append(ROMAN_NUMERALS.get(numeralKeys.get(item)));
-				roman.append(ROMAN_NUMERALS.get(val));
+				roman.append(romanNumerals.get(numeralKeys.get(item)));
+				roman.append(romanNumerals.get(val));
 				
 				number -= (val - numeralKeys.get(item));
 			}

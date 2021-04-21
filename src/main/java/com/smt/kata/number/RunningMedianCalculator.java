@@ -54,7 +54,7 @@ public class RunningMedianCalculator {
 			Collections.sort(sequence);
 			
 			if (sequence.size() % 2 == 1) {
-				int loc = (int) Math.ceil(sequence.size() / 2);
+				int loc = (int) (sequence.size() / (double)2);
 				medianValues.add(Double.valueOf(sequence.get(loc)));
 			} else {
 				int loc = sequence.size() / 2;

@@ -53,14 +53,14 @@ public class CheckWriter {
 		StringBuilder holder = new StringBuilder();
 		boolean hasTeen = false;
 		for (int val : vals) {
-			int numItem = (int)data / val;
+			
+			int numItem = (int) data / val;
 			if (numItem == 0) continue;
 				
 			if (val < 100) {
 				if (val == 10 && numItem == 1) hasTeen = true;
 				else {
-					if (hasTeen) holder.append(numberMap.get(val * numItem + 10)).append(" ");
-					else holder.append(numberMap.get(val * numItem)).append(" ");
+					holder.append(numberMap.get(val * numItem + (hasTeen ? 10 : 0))).append(" ");
 				}
 			} else {
 				holder.append(numberMap.get(numItem)).append(" ");
@@ -68,8 +68,19 @@ public class CheckWriter {
 			}
 			
 			data = data - (numItem * val);
+			
 		}
 		
+		return getHolder(holder, data);
+	}
+	
+	/**
+	 * Processes the final entries for the check writer
+	 * @param holder The current output values
+	 * @param data data element (remainder)
+	 * @return String of the shceck writer
+	 */
+	public String getHolder(StringBuilder holder, double data) {
 		holder.append("dollars ");
 		if (data > 0 && data < 1) holder.append("and ").append((int)(data * 100)).append("/100");
 

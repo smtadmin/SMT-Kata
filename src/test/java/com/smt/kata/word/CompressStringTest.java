@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
  * @since Feb 5, 2021
  * @updates:
  ****************************************************************************/
-public class CompressStringTest {
+class CompressStringTest {
 
 	@Test
 	void testCompress() throws Exception {

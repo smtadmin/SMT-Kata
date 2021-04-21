@@ -51,9 +51,8 @@ public class MatrixIsland {
 			int[] row = matrix[i];
 			
 			for (int j = 0; j < row.length; j++) {
-				if (j > 0 && j < row.length - 1 && row[j] == 1) {
-					System.out.println("Row: " + i + ", Index: " + j);
-					if (isIsland(i, j)) islandCounter++;
+				if (j > 0 && j < row.length - 1 && row[j] == 1 && isIsland(i, j)) {
+					islandCounter++;
 				}
 			}
 		}

@@ -3,6 +3,7 @@ package com.smt.kata.object;
 //JDK 11.x
 import java.io.Serializable;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -45,7 +46,8 @@ public class ReflectionKata {
 	/**
 	 * 
 	 */
-	public ReflectionKata(String id, String first, String last, Grade level, double gpa)  throws Exception {
+	public ReflectionKata(String id, String first, String last, Grade level, double gpa) 
+	throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		super();
 		student = new Student(id, first, last, level, gpa);
 		processStudentClass();
@@ -54,8 +56,11 @@ public class ReflectionKata {
 	/**
 	 * Process the student class using reflection and stores those entities in the 
 	 * appropriate collections
+	 * @throws InvocationTargetException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException 
 	 */
-	private void processStudentClass() throws Exception {
+	private void processStudentClass() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// Process the fields
 		for (Field f : student.getClass().getDeclaredFields()) {
 			fieldMap.put(f.getName(), f.getType());

@@ -35,7 +35,7 @@ class DictionaryTest {
 	 * @throws Exception
 	 */
 	@Test
-	public void testGetDictionary() throws Exception {
+	void testGetDictionary() throws Exception {
 		Dictionary d = new Dictionary();
 		Set<String> dict = d.getDictionary();
 		

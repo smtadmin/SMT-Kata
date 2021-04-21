@@ -90,7 +90,6 @@ class SpiralMatrixTest {
 	@Test
 	void testCounterClockwise() throws Exception {
 		List<Integer> counterClockwise = sm.counterClockwise(MATRIX);
-		System.out.println(counterClockwise);
 		assertEquals(20, counterClockwise.size());
 		for (int i=0; i < counterClockwise.size(); i++) {
 			assertEquals(COUNTER_CLOCKWISE_ORDER[i], counterClockwise.get(i));
