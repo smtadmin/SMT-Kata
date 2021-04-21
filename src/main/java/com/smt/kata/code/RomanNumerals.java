@@ -23,18 +23,22 @@ public class RomanNumerals {
 	/**
 	 * Map of the roman numerals to decimal conversion
 	 */
-	private static Map<Integer, String> numerals = new LinkedHashMap<Integer,String>() {
-		private static final long serialVersionUID = 1L; {
-			put(1000, "M");
-			put(500, "D");
-			put(100, "C");
-			put(50, "L");
-			put(10, "X");
-			put(5, "V");
-			put(1, "I");
-		}
-	};
+	private Map<Integer, String> numerals = new LinkedHashMap<>();
 
+	/**
+	 * Initializaes the numerals
+	 */
+	public RomanNumerals() {
+		super();
+		numerals.put(1000, "M");
+		numerals.put(500, "D");
+		numerals.put(100, "C");
+		numerals.put(50, "L");
+		numerals.put(10, "X");
+		numerals.put(5, "V");
+		numerals.put(1, "I");
+	}
+	
 	/**
 	 * Convert a number into its roman numeral counterpart
 	 * @param startNumber

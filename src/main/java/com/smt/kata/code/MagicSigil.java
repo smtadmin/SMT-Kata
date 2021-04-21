@@ -32,17 +32,21 @@ public class MagicSigil {
 	/**
 	 * Keep track of the letters we're removing
 	 */
-	private static Set<String> vowels = new HashSet<String>() {
-		private static final long serialVersionUID = 1L; {
-			add("A");
-			add("E");
-			add("I");
-			add("O");
-			add("U");
-			add(" ");
-		}
-	};
-
+	private Set<String> vowels = new HashSet<>(); 
+	
+	/**
+	 * Initializes the vowels set
+	 */
+	public MagicSigil() {
+		super();
+		vowels.add("A");
+		vowels.add("E");
+		vowels.add("I");
+		vowels.add("O");
+		vowels.add("U");
+		vowels.add(" ");
+	}
+	
 	/**
 	 * Sigilize the word
 	 * @param word

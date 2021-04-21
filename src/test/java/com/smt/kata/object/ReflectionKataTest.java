@@ -82,7 +82,6 @@ class ReflectionKataTest {
 	void testGetMethods() {
 		Map<String, Class<?>> methods = rk.getMethods();
 		List<String> keys = new ArrayList<>(methods.keySet());
-		System.out.println(keys);
 		assertEquals(10, methods.size());
 		
 		assertEquals("getFirstName", keys.get(0));
