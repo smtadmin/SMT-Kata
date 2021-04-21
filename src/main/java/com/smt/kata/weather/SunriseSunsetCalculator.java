@@ -8,9 +8,8 @@ import java.util.Date;
 // Google Gson 2.8.x
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+
 // Space Libs 1.x
-import com.siliconmtn.data.format.DateFormat;
-import com.siliconmtn.data.format.DateFormat.DatePattern;
 import com.siliconmtn.data.text.StringUtil;
 import com.siliconmtn.io.http.SMTHttpConnectionManager;
 import com.siliconmtn.io.http.SMTHttpConnectionManager.HttpConnectionType;
@@ -66,13 +65,11 @@ public class SunriseSunsetCalculator {
 	 */
 	private void getSunriseSunset(Date date, double lat, double lng) throws IOException {
 		// Build the URL
-		StringBuilder sb = new StringBuilder(SUNRISE_SUNSET_URL);
-		sb.append("lat=").append(lat).append("&lng=").append(lng).append("&date=");
-		sb.append(DateFormat.toFormattedString(DatePattern.DATE_DASH, date));
-		
+		String url = String.format("%slat=%f&lng=%f&date=%s", SUNRISE_SUNSET_URL, lat, lng, date.toString());
+	    
 		// Retrieve the data
 		SMTHttpConnectionManager conn = new SMTHttpConnectionManager();
-		byte[] response = conn.getRequestData(sb.toString(), null, HttpConnectionType.GET);
+		byte[] response = conn.getRequestData(url, null, HttpConnectionType.GET);
 
 		// Convert the json into java object
 		Gson g = new Gson();
