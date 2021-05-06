@@ -39,7 +39,7 @@ public class StringOrder {
 		if (StringUtil.isEmpty(val)) return false;
 		
 		char hldr = ' ';
-		for (char c : val.toCharArray()) {
+		for (char c : val.toLowerCase().toCharArray()) {
 			if (c < hldr) return false;
 			
 			hldr = c;
