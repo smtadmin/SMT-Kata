@@ -35,21 +35,25 @@ public class Riffler {
 	 * Combines the two arrays by alternating the elements from each array
 	 * @param source Source array.  Length must be greater than or equal to dest
 	 * @param dest Destination array to combine.  Must be within 1 character of
-	 * the length
+	 * the source length
 	 * @return Combined array.  Empty array if invalid data
 	 */
 	public char[] riffle(char[] source, char[] dest) {
-
+		// Check the input
 		if (isInValidInput(source, dest)) return new char[0];
-			
+		
+		// Create e new array to hold the compbined that is the length
+		// of both arrays summed
 		char[] combined = new char[source.length + dest.length];
 		
+		// Add the odd elements
 		int start = 0;
 		for (int i=0; i < source.length; i++) {
 			combined[start] = source[i];
 			start += 2;
 		}
 		
+		// Add the even elements
 		start = 1;
 		for (int i=0; i < dest.length; i++) {
 			combined[start] = dest[i];
@@ -65,17 +69,20 @@ public class Riffler {
 	 * @return Source array as key and the dest array as value
 	 */
 	public GenericVO deriffle(char[] combined) {
+		// Create 2 arrays to hold the odd and even values
 		int len = combined.length;
 		double sLen = Math.ceil(len / 2.0);
 		char[] source = new char[(int)sLen];
 		char[] dest = new char[(int)(len - sLen)];
 		
+		// Add the elements to the 2 arrays
 		int insert = 0;
 		for(int i = 0; i < len; i++) {
 			if ((i % 2) == 0) source[insert] = combined[i];
 			else dest[insert++] = combined[i];
 		}
 		
+		// Add the arrays to the vo and return
 		return new GenericVO(source, dest);
 	}
 	
