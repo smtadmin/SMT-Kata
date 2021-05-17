@@ -64,6 +64,13 @@ class ZigZagNumbersTest {
 		assertTrue(zzn.isZigZag(new int[]{-4,-2,-8,-2,-10,-5,-13}));
 	}
 	
+	/**
+	 * Test method for {@link com.smt.kata.code.ZigZagNumbers#isZigZag(int[])}.
+	 */
+	@Test
+	void testIsZigZagOddLarger() throws Exception {
+		assertFalse(zzn.isZigZag(new int[]{10000, 500000, 25000000, 2000000, 100000, 1980000, 76587}));
+	}
 
 	/**
 	 * Test method for {@link com.smt.kata.code.ZigZagNumbers#isZigZag(int[])}.
