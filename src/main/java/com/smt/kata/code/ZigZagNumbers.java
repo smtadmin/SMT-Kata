@@ -38,11 +38,12 @@ public class ZigZagNumbers {
 	 */
 	public boolean isZigZag(int[] source) {
 		if (source == null || source.length < 2) return false;
-		int prev = 0;
+		int prev = source[0];
+		int offset = (prev - source[1]) >= 0 ? 1 : 0;
 		
-		for (int i=0; i < source.length; i++) {
-			if (i > 0 && (i % 2) == 0 && source[i] >= prev) return false;
-			else if (i > 0 && (i % 2) == 1 && source[i] <= prev) return false;
+		for (int i=1; i < source.length; i++) {
+			if ((i % 2) == offset && source[i] >= prev) return false;
+			else if ((i % 2) == (offset ^ 1) && source[i] <= prev) return false;
 			
 			prev = source[i];
 		}
