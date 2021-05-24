@@ -32,7 +32,31 @@ public class CoinCollector {
 	 * @return Total number of coins collected
 	 */
 	public int collect(int[][] matrix) {
-		
-		return 0;
+		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return 0;
+		else return explore(0, 0, 0, matrix);
 	}
+	
+	/**
+	 * Recursive method to calculate all of the possible pathways
+	 * @param x X Coordinate of the matrix
+	 * @param y Y coordinate of the matrix
+	 * @param collected Values for the pathway
+	 * @param matrix Matrix to process against
+	 * @return Greatest number of coins in the path
+	 */
+	private int explore(int x, int y, int collected, int[][] matrix) {
+        
+		// Check the boundaries
+        if (x >= matrix.length || y >= matrix[x].length) return collected;
+        
+        // Increment the collected amount
+        collected += matrix[x][y];
+        
+        // Recursively go down and right
+        int checkDown= explore(x+1, y, collected, matrix);
+        int checkRight= explore(x, y+1, collected, matrix);
+        
+        // Return whichever is greater
+        return checkDown >= checkRight ?  checkDown :  checkRight;
+    }
 }
