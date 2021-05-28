@@ -2,11 +2,10 @@ package com.smt.kata.word;
 
 // JDK 11.x
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.siliconmtn.data.text.StringUtil;
 
 /****************************************************************************
  * <b>Title</b>: SpellWithElements.java
@@ -59,23 +58,55 @@ public class SpellWithElements {
 	
 	/**
 	 * Finds the matching patterns of words to the letter(s)
-	 * @param source
-	 * @return
+	 * @param source Phrae to match
+	 * @return Collection of lists of the matching patterns
 	 */
 	public List<List<String>> findPatterns(String source) {
-		List<List<String>> response = new ArrayList<>();
-		if (StringUtil.isEmpty(source)) return response;
-		source = source.toLowerCase();
+		List<List<String>> matches = new ArrayList<>();
+		if (source == null || source.length() == 0) return matches;
 		
-		List<String> newWord = new ArrayList<>();
-		for (int i=0; i < source.length(); i++) {
-			
+		List<String> vals = recurse(source, 0, "", new ArrayList<>());
+		
+		for (String row : vals) {
+			if (row.replace("|", "").equalsIgnoreCase(source)) {
+				List<String> data = Arrays.asList(row.split("\\|"));
+				matches.add(data);
+			}
 		}
 		
-		
-		return response;
+		return matches;
 	}
 	
+	/**
+	 * Recurse a single and dual character match.  Concat the items to create a 
+	 * unique list of possibilities
+	 * @param source Source to process
+	 * @param index Current index of the processing
+	 * @param newSource Concatenated source
+	 * @param entries Entry in the list for each entry
+	 * @return List of entries
+	 */
+	protected List<String> recurse(String source, int index, String newSource, List<String> entries) {
+		if (index + 1 >= source.length()) return entries;
+		
+		// Recurse the single character entries
+		String single = source.substring(index, index + 1);
+		if (elements.containsKey(single)) {
+			entries.add(newSource + single + "|");
+			recurse(source, index + 1, (newSource + single + "|"), entries);
+		}
+		
+		// Recurse the 2 cahracter entries
+		String two = source.substring(index, index + 2);
+		if (elements.containsKey(two)) {
+			entries.add(newSource + two + "|");
+			recurse(source, index + 2, (newSource + two + "|"), entries);
+		} else {
+			return entries;
+		}
+
+		return entries;
+	}
 	
 	/**
 	 * Assigns all of the periodic elements to the map
