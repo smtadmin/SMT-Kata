@@ -43,7 +43,7 @@ public class FormTheLargest {
 	public long calculate(long source) {
         return Long.parseLong(
     		Arrays
-    			.stream(String.valueOf(source).split(""))
+    			.stream(String.valueOf(Math.abs(source)).split(""))
     			.sorted((o1, o2) -> -Long.compare(Long.parseLong(o1), Long.parseLong(o2)))
     			.collect(Collectors.joining())
     	);

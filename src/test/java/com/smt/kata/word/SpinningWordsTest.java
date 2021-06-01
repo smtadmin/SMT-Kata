@@ -42,6 +42,22 @@ class SpinningWordsTest {
 	 * Test method for {@link com.smt.kata.word.SpinningWords#spin(java.lang.String)}.
 	 */
 	@Test
+	void testSpinSingleSmall() throws Exception {
+		assertEquals("Hey" , sw.spin("Hey"));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.word.SpinningWords#spin(java.lang.String)}.
+	 */
+	@Test
+	void testSpinSingleLarge() throws Exception {
+		assertEquals("gninnipS" , sw.spin("Spinning"));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.word.SpinningWords#spin(java.lang.String)}.
+	 */
+	@Test
 	void testSpinPhraseSmall() throws Exception {
 		assertEquals("This is a test" , sw.spin("This is a test"));
 	}

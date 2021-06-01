@@ -39,6 +39,12 @@ import com.siliconmtn.data.text.StringUtil;
  ****************************************************************************/
 public class LunarMathematics {
 	
+	/**
+	 * Performs Lunar Math on the 2 provided numbers
+	 * @param firstNumber First number to add
+	 * @param secondNumber Second Number to add
+	 * @return Total of the lunar math addition of the provided 2 numbers
+	 */
 	public int add(int firstNumber, int secondNumber) {
 		// Find the largest number and assign as loop.  Other number as eval
 		String loopNumber = firstNumber >= secondNumber ? String.valueOf(Math.abs(firstNumber)) : String.valueOf(Math.abs(secondNumber));

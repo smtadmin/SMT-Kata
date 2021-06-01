@@ -52,4 +52,12 @@ class LunarMathematicsTest {
 	void testAddDiffLenSwap() throws Exception {
 		assertEquals(475, lm.add(72, 465));
 	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.math.LunarMathematics#add(int, int)}.
+	 */
+	@Test
+	void testAddDiffLenSwapLarge() throws Exception {
+		assertEquals(4655572, lm.add(72, 4655551));
+	}
 }

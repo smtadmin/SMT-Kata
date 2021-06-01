@@ -16,8 +16,6 @@ import com.siliconmtn.data.bean.GenericVO;
  * 
  * By name ...
  * 
- * Do it now !
- * 
  * Input Range is 0-9
  * 
  * There may be duplicates
@@ -57,7 +55,7 @@ public class SortSaySequence {
     public int[] reorder(int[] input) {
         return Arrays
                 .stream(input == null ? new int[0] : input)
-                .mapToObj(value -> new GenericVO(units.values()[value].name(), value))
+                .mapToObj(value -> new GenericVO(units.values()[Math.abs(value)].name(), Math.abs(value)))
                 .sorted()
                 .collect(Collectors.toList())
                 .stream()

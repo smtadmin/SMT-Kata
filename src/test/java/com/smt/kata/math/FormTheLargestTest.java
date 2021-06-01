@@ -29,4 +29,44 @@ class FormTheLargestTest {
 		assertEquals(321, ftl.calculate(213));
 	}
 
+	/**
+	 * Test method for {@link com.smt.kata.math.FormTheLargest#calculate(long)}.
+	 */
+	@Test
+	void testCalculateEmpty() throws Exception {
+		assertEquals(0, ftl.calculate(0));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.math.FormTheLargest#calculate(long)}.
+	 */
+	@Test
+	void testCalculateAllSame() throws Exception {
+		assertEquals(3333333, ftl.calculate(3333333));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.math.FormTheLargest#calculate(long)}.
+	 */
+	@Test
+	void testCalculateIncrementing() throws Exception {
+		assertEquals(987654321, ftl.calculate(123456789));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.math.FormTheLargest#calculate(long)}.
+	 */
+	@Test
+	void testCalculateIDecrementing() throws Exception {
+		assertEquals(987654321, ftl.calculate(987654321));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.math.FormTheLargest#calculate(long)}.
+	 */
+	@Test
+	void testCalculateNegative() throws Exception {
+		assertEquals(9753, ftl.calculate(-9375));
+	}
+
 }

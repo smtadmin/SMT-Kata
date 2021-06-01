@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /****************************************************************************
  * <b>Title</b>: OrderPleaseTest.java
  * <b>Project</b>: SMT-Kata
- * <b>Description: </b> CHANGE ME!!
+ * <b>Description: </b> Unit test for the Order Please Kata
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
@@ -52,6 +52,14 @@ class OrderPleaseTest {
 	@Test
 	void testReorderNoNums() throws Exception {
 		assertEquals("We the people", op.reorder("We the people"));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.word.OrderPlease#reorder(java.lang.String)}.
+	 */
+	@Test
+	void testReorderMixedNums() throws Exception {
+		assertEquals("people in order the1 We2", op.reorder("We2 the1 people in order"));
 	}
 	
 	/**
