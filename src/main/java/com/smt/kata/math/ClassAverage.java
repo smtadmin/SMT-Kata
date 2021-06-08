@@ -49,7 +49,7 @@ public class ClassAverage {
 		// Multiple by .95 to reduce the average by 5%
 		double newAvg = average * .95;
 		
-		// Multiply the new average by the orig length + 1 nd subtract from total
+		// Multiply the new average by the orig length + 1 and subtract from total
 		int newTotal = (int)Math.round((newAvg * (len +1)) - total);
 		
 		// Return the new total with a % sign

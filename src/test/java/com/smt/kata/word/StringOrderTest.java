@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /****************************************************************************
  * <b>Title:</b> StringOrderTest.java
  * <b>Project:</b> SMT-Kata
- * <b>Description:</b> Unit test for the Atring Order kata
+ * <b>Description:</b> Unit test for the String Order kata
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
@@ -30,6 +30,7 @@ class StringOrderTest {
 	void testIsInOrderEmpty() throws Exception {
 		assertFalse(so.isInOrder(""));
 		assertFalse(so.isInOrder(null));
+		assertTrue(so.isInOrder("1"));
 	}
 
 	/**
@@ -38,6 +39,7 @@ class StringOrderTest {
 	@Test
 	void testIsInOrderABC() throws Exception {
 		assertTrue(so.isInOrder("abc"));
+		assertTrue(so.isInOrder("al"));
 	}
 	
 	/**
@@ -62,6 +64,7 @@ class StringOrderTest {
 	@Test
 	void testIsInOrderXYZZ() throws Exception {
 		assertTrue(so.isInOrder("xyzz"));
+		assertTrue(so.isInOrder("xxxxxxxyyyyyyyzzzzzzz"));
 	}
 
 	/**
@@ -70,5 +73,21 @@ class StringOrderTest {
 	@Test
 	void testIsInOrderMixed() throws Exception {
 		assertFalse(so.isInOrder("aBc"));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.word.StringOrder#isInOrder(java.lang.String)}.
+	 */
+	@Test
+	void testIsInOrderMixedGood() throws Exception {
+		assertTrue(so.isInOrder("159BLMac"));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.word.StringOrder#isInOrder(java.lang.String)}.
+	 */
+	@Test
+	void testIsInOrderNonAlpha() throws Exception {
+		assertTrue(so.isInOrder(" \"+9:>\\_dkl"));
 	}
 }

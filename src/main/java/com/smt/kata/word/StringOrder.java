@@ -16,6 +16,7 @@ import com.siliconmtn.data.text.StringUtil;
  * isInOrder("edabit") ➞ false
  * isInOrder("123") ➞ true
  * isInOrder("xyzz") ➞ true
+ * isInOrder("a") ➞ true
  * 
  * No extra imports are needed for this class
  * 
@@ -38,7 +39,7 @@ public class StringOrder {
 	public boolean isInOrder(String val) {
 		if (StringUtil.isEmpty(val)) return false;
 		
-		char hldr = ' ';
+		char hldr = '\t';
 		for (char c : val.toCharArray()) {
 			if (c < hldr) return false;
 			
