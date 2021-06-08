@@ -1,4 +1,4 @@
-package com.smt.kata.data;
+package com.smt.kata.time;
 
 // Junit 5
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class CorrectTheTimeTest {
 	private CorrectTheTime ctt = new CorrectTheTime();
 
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#CorrectTheTime()}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#CorrectTheTime()}.
 	 */
 	@Test
 	public void testCorrectTheTime() throws Exception {
@@ -30,7 +30,7 @@ public class CorrectTheTimeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#transform(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#transform(java.lang.String)}.
 	 */
 	@Test
 	public void testTransformNull() throws Exception {
@@ -38,7 +38,7 @@ public class CorrectTheTimeTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#transform(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#transform(java.lang.String)}.
 	 */
 	@Test
 	public void testTransformCorrect() throws Exception {
@@ -46,7 +46,7 @@ public class CorrectTheTimeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#transform(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#transform(java.lang.String)}.
 	 */
 	@Test
 	public void testTransformMinutes() throws Exception {
@@ -54,7 +54,7 @@ public class CorrectTheTimeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#transform(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#transform(java.lang.String)}.
 	 */
 	@Test
 	public void testTransformMinSeconds() throws Exception {
@@ -62,7 +62,7 @@ public class CorrectTheTimeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#transform(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#transform(java.lang.String)}.
 	 */
 	@Test
 	public void testTransformHour() throws Exception {
@@ -70,7 +70,7 @@ public class CorrectTheTimeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.CorrectTheTime#transform(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.time.CorrectTheTime#transform(java.lang.String)}.
 	 */
 	@Test
 	public void testTransformCrazy() throws Exception {

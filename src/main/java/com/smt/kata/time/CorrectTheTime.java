@@ -1,4 +1,4 @@
-package com.smt.kata.data;
+package com.smt.kata.time;
 
 import org.apache.commons.lang3.StringUtils;
 

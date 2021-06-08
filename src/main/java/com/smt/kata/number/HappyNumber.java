@@ -7,11 +7,12 @@ package com.smt.kata.number;
  * 
  * A happy number is a number which yields a 1 by repeatedly summing up the square 
  * of its digit. If such a process results in an endless cycle of numbers 
- * containing 4, the number is said to be an unhappy number.
+ * containing 4, the number is said to be an unhappy number.  You need to continue 
+ * processing the results until a happy or unhappy state is achieved
  * 
  * Create a function that accepts a number and determines whether the number is a 
  * happy number or not. Return true if so, false otherwise.
- * 
+ *
  * Examples
  * isHappy(67) ➞ false
  * isHappy(89) ➞ false
