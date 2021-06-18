@@ -1,4 +1,4 @@
-package com.smt.kata.data;
+package com.smt.kata.security;
 
 // Junit 5
 import static org.junit.Assert.assertEquals;
@@ -26,7 +26,7 @@ class StrongPasswordTest {
 	private StrongPassword sp = new StrongPassword();
 
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#StrongPassword()}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#StrongPassword()}.
 	 */
 	@Test
 	void testStrongPassword() throws Exception {
@@ -35,7 +35,7 @@ class StrongPasswordTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#StrongPassword()}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#StrongPassword()}.
 	 */
 	@Test
 	void testStrongPasswordLength() throws Exception {
@@ -44,7 +44,7 @@ class StrongPasswordTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#StrongPassword(int)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#StrongPassword(int)}.
 	 */
 	@Test
 	void testStrongPasswordInt() throws Exception {
@@ -55,7 +55,7 @@ class StrongPasswordTest {
 	
 
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#StrongPassword(int)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#StrongPassword(int)}.
 	 */
 	@Test
 	void testStrongPasswordSmallInt() throws Exception {
@@ -65,7 +65,7 @@ class StrongPasswordTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#isValidPattern(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#isValidPattern(java.lang.String)}.
 	 */
 	@Test
 	void testIsValidPatternEmpty() throws Exception {
@@ -74,7 +74,7 @@ class StrongPasswordTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#isValidPattern(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#isValidPattern(java.lang.String)}.
 	 */
 	@Test
 	void testIsValidPattern() throws Exception {
@@ -82,7 +82,7 @@ class StrongPasswordTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#isValidPattern(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#isValidPattern(java.lang.String)}.
 	 */
 	@Test
 	void testIsValidPatternShort() throws Exception {
@@ -90,7 +90,7 @@ class StrongPasswordTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#isValidPattern(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#isValidPattern(java.lang.String)}.
 	 */
 	@Test
 	void testIsValidPatternNoDigit() throws Exception {
@@ -98,7 +98,7 @@ class StrongPasswordTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#isValidPattern(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#isValidPattern(java.lang.String)}.
 	 */
 	@Test
 	void testIsValidPatternCase() throws Exception {
@@ -113,7 +113,7 @@ class StrongPasswordTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.data.StrongPassword#validateSpecialChars(java.lang.String)}.
+	 * Test method for {@link com.smt.kata.security.StrongPassword#validateSpecialChars(java.lang.String)}.
 	 */
 	@Test
 	void testValidateSpecialCharsInvalid() throws Exception {

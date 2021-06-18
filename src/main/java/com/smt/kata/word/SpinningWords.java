@@ -45,7 +45,7 @@ public class SpinningWords {
 		return Arrays
             .stream(StringUtil.isEmpty(input) ? new String[0] : input.split(" "))
             .map(s -> s.length() >= 5 ? new StringBuilder(s).reverse().toString() : s)
-            .map(name -> name.length() > 5 ? name.substring(0, name.length()-1).toLowerCase() + name.substring(name.length()-1).toUpperCase() : name)
+            .map(name -> name.length() >= 5 ? name.substring(0, name.length()-1).toLowerCase() + name.substring(name.length()-1).toUpperCase() : name)
             .collect(Collectors.joining(" "));
     }
 
