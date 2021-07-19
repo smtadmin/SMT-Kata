@@ -73,25 +73,37 @@ public class JsonParser {
 				String line = "";
 				String prevKey = "";
 				while((line = br.readLine()) != null) {
-					line = removeChars(line);
-					
-					if (line.contains("}")) {
-						prevKey = prevKey.contains(".") ? prevKey.substring(0, prevKey.lastIndexOf(".")) : "";
-					} else if (line.contains(":") && line.contains("{")) {
-						line = line.replace("{", "");
-						String[] keys = line.split(":");
-						prevKey += (prevKey.length() == 0 ? "" : ".") + keys[0].trim();
-					} else if (! line.contains("{")) {
-						String[] keys = line.split(":");
-						prevKey += (prevKey.length() == 0 ? "" : ".") + keys[0].trim();
-						data.put(prevKey, assignVars(keys[1].trim()));
-						
-						prevKey = prevKey.contains(".") ? prevKey.substring(0, prevKey.lastIndexOf(".")) : "";
-					}
+					prevKey = processLine(line, prevKey, data);
 					
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Parses each line of the json object
+	 * @param line Individual line to process
+	 * @param prevKey Keeps track of the base key
+	 * @param data Map of keys and values for the json object
+	 * @return Updated previous key
+	 */
+	private String processLine(String line, String prevKey, Map<String, Object> data) {
+		line = removeChars(line);
+		
+		if (line.contains("}")) {
+			prevKey = prevKey.contains(".") ? prevKey.substring(0, prevKey.lastIndexOf(".")) : "";
+		} else if (line.contains(":") && line.contains("{")) {
+			line = line.replace("{", "");
+			String[] keys = line.split(":");
+			prevKey += (prevKey.length() == 0 ? "" : ".") + keys[0].trim();
+		} else if (! line.contains("{")) {
+			String[] keys = line.split(":");
+			prevKey += (prevKey.length() == 0 ? "" : ".") + keys[0].trim();
+			data.put(prevKey, assignVars(keys[1].trim()));
+			prevKey = prevKey.contains(".") ? prevKey.substring(0, prevKey.lastIndexOf(".")) : "";
+		}
+		
+		return prevKey;
 	}
 	
 	/**
