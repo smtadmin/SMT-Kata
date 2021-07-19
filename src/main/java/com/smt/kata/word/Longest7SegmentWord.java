@@ -18,7 +18,7 @@ import java.util.List;
  * |_||_|  |_||_|
  * 
  * Find the longest word that can be represented inside stringing multiple seven 
- * segment letters together.  Not all letters can be displyed in this manner
+ * segment letters together.  Not all letters can be displayed in this manner
  * 
  * Notes
  * 	All words will be given in lower case and upper case.
