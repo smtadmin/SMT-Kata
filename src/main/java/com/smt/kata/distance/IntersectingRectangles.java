@@ -52,8 +52,8 @@ public class IntersectingRectangles {
 	 * @return List of overlapping coordinates
 	 */
 	public List<Coord> getOverlap(Coord one, int width1,  int height1, Coord two, int width2, int height2) {
-		if (one == null || two == null) return new ArrayList<>();
-		else if (width1 < 1 || width2 < 1 || height1 < 1 || height2 < 1) return new ArrayList<>();
+		if (one == null || two == null || (width1 < 1 || width2 < 1 || height1 < 1 || height2 < 1))
+			return new ArrayList<>();
 		
 		List<Coord> rect1 = createCoordList(one, width1, height1);
 		List<Coord> rect2 = createCoordList(two, width2, height2);
@@ -72,8 +72,8 @@ public class IntersectingRectangles {
 	 */
 	public List<Coord> createCoordList(Coord coord, int width, int height) {
 		List<Coord> coords = new ArrayList<>();
-		for (int i=coord.top; i < (coord.top + width); i++) {
-			for (int j = coord.left; j < (coord.left + height); j++) {
+		for (int i=coord.top; i < (coord.top + height); i++) {
+			for (int j = coord.left; j < (coord.left + width); j++) {
 				coords.add(new Coord(i, j));
 			}
 		}

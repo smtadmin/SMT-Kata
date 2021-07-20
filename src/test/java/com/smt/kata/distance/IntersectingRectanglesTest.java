@@ -38,7 +38,7 @@ class IntersectingRectanglesTest {
 	 */
 	@Test
 	void testGetOverlap() throws Exception {
-		List<Coord> coords = ir.getOverlap(new Coord(1,4), 3, 3, new Coord(0,5), 4, 3);
+		List<Coord> coords = ir.getOverlap(new Coord(1,4), 3, 3, new Coord(0,5), 3, 4);
 		assertEquals(6, coords.size());
 		assertEquals(new Coord(1,5), coords.get(0));
 		assertEquals(new Coord(1,6), coords.get(1));
