@@ -115,6 +115,7 @@ public class ProbabilityStudentClub {
 		while(true) {
 			findMatch(vo);
 			int rand = RandomUtil.generateRandomNumber(1, 7);
+			vo.addRoll(RollType.SECOND_NUMBER);
 			if (vo.secondNumber == rand) break;
 		}
 
