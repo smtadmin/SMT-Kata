@@ -1,4 +1,4 @@
-package com.smt.kata.data;
+package com.smt.kata.security;
 
 // JDK 11.x
 import java.util.Arrays;
