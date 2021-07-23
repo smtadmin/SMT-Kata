@@ -1,7 +1,6 @@
 package com.smt.kata.distance;
 
-// Kata 1.x
-import com.smt.kata.distance.data.CoordinateVO;
+import com.smt.kata.distance.bean.CoordinateVO;
 
 /****************************************************************************
  * <b>Title</b>: MatrixRange.java

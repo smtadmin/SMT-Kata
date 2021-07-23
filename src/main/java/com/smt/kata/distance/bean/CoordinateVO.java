@@ -1,4 +1,4 @@
-package com.smt.kata.distance.data;
+package com.smt.kata.distance.bean;
 
 // JDK 11.x
 import java.io.Serializable;

@@ -1,16 +1,17 @@
 package com.smt.kata.distance;
 
+// Junit 5
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.smt.kata.distance.data.CoordinateVO;
+// Kata libs
+import com.smt.kata.distance.bean.CoordinateVO;
 
 /****************************************************************************
  * <b>Title</b>: MatrixRangeTest.java
  * <b>Project</b>: SMT-Kata
- * <b>Description: </b> CHANGE ME!!
+ * <b>Description: </b> Unit tets for the Matrix Range Kata
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
@@ -41,7 +42,7 @@ class MatrixRangeTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsAllBad() throws Exception {
@@ -50,7 +51,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsNoStart() throws Exception {
@@ -58,7 +59,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsNoEnd() throws Exception {
@@ -66,7 +67,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsNoStartOrEnd() throws Exception {
@@ -74,7 +75,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsOutOfRange() throws Exception {
@@ -85,7 +86,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsBackwards() throws Exception {
@@ -93,7 +94,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElements() throws Exception {
@@ -101,7 +102,7 @@ class MatrixRangeTest {
 	}
 
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsNone() throws Exception {
@@ -109,7 +110,7 @@ class MatrixRangeTest {
 	}
 	
 	/**
-	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.data.CoordinateVO, com.smt.kata.distance.data.CoordinateVO)}.
+	 * Test method for {@link com.smt.kata.distance.MatrixRange#getNumberElements(int[][], com.smt.kata.distance.bean.CoordinateVO, com.smt.kata.distance.bean.CoordinateVO)}.
 	 */
 	@Test
 	void testGetNumberElementsMost() throws Exception {
