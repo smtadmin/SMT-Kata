@@ -21,6 +21,16 @@ import com.siliconmtn.data.text.StringUtil;
  * String will only contain valid consecutive numbers.
  * If a word does not have a number, default it to 0
  * 
+ * For Example:
+ * Input: "is2 Thi1s T4est 3a"
+ * Output: "Thi1s is2 3a T4est"
+ * 
+ * Input: "We1 1the p1eople i1n o1rder t1o 1form 1a 1more 1perfect 1union"
+ * Output: "We1 1the p1eople i1n o1rder t1o 1form 1a 1more 1perfect 1union"
+ * 
+ * Input: "4of Fo1r pe6ople g3ood th5e the2"
+ * Output: "Fo1r the2 g3ood 4of th5e pe6ople"
+ * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
  * 
