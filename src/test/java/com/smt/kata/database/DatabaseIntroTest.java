@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 // Junit 5
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -78,7 +80,7 @@ class DatabaseIntroTest {
 	@Test
 	void testRetrieveDataFromTable() throws Exception {
 		List<Map<String, Object>> data = di.retrieveDataFromTable("ezform");
-		assertEquals(10, data.size());
+		assertEquals(12, data.size());
 		
 		for (Map<String, Object> row : data) {
 			assertEquals(22, row.size());
@@ -88,4 +90,26 @@ class DatabaseIntroTest {
 		}
 	}
 
+	/**
+	 * Test method for {@link com.smt.kata.database.DatabaseIntro#getPrimaryKeyColumn(java.lang.String)}.
+	 */
+	@Test
+	void testGetPrimaryKeyColumn() throws Exception {
+		assertEquals("ezform_id", di.getPrimaryKeyColumn("ezform"));
+		assertNull(di.getPrimaryKeyColumn("none"));
+	}
+
+	/**
+	 * Test method for {@link com.smt.kata.database.DatabaseIntro#listDatabaseTables()}.
+	 */
+	@Test
+	void testListDatabaseTables() throws Exception {
+		List<String> tables = di.listDatabaseTables("ez_form_schema");
+		assertEquals(32, tables.size());
+		assertTrue(tables.contains("ezform"));
+		
+		assertEquals(383, di.listDatabaseTables(null).size());
+	}
+
+	
 }

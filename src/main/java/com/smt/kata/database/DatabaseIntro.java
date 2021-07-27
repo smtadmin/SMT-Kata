@@ -2,6 +2,7 @@ package com.smt.kata.database;
 
 // JDK 11.x
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -48,7 +49,7 @@ public class DatabaseIntro {
 	/**
 	 * Retrieves the metadata for the provided column
 	 * @param tableName Table to retrieve metadata
-	 * @return Map with the column name as the key and ther java data type as the value
+	 * @return Map with the column name as the key and the java data type as the value
 	 * @throws SQLException 
 	 */
 	public Map<String, String> getTableMetaData(String tableName) throws SQLException {
@@ -92,6 +93,45 @@ public class DatabaseIntro {
 			}
 		}
 		
+		return data;
+	}
+	
+	/**
+	 * Retrieves the primary key for the provided table
+	 * @param tableName Table's primary key to locate
+	 * @return Column name of the primary key
+	 * @throws SQLException
+	 */
+	public String getPrimaryKeyColumn(String tableName) throws SQLException {
+		//Retrieving the meta data object
+	    DatabaseMetaData metaData = conn.getMetaData();
+	    
+	    //Retrieving the columns in the database
+	    ResultSet rs = metaData.getPrimaryKeys(null, null, tableName);
+	    
+	    if(rs.next() ) return rs.getString("column_name");
+	    else return null;
+	}
+	
+	/**
+	 * Retrieves the names of all of the tables
+	 * @param schema Schema to filer.  All schemas if null
+	 * @return Collection of table names
+	 * @throws SQLException
+	 */
+	public List<String> listDatabaseTables(String schema) throws SQLException {
+		List<String> data = new ArrayList<>();
+		
+		//Retrieving the meta data object
+	    DatabaseMetaData metaData = conn.getMetaData();
+	    
+	    //Retrieving the tab;es in the database
+	    ResultSet rs = metaData.getTables(null, schema, null, null);
+	    
+	    while(rs.next()) {
+	    	data.add(rs.getString("TABLE_NAME"));
+	    }
+	    
 		return data;
 	}
 }
