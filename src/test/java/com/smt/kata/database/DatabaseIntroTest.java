@@ -105,10 +105,10 @@ class DatabaseIntroTest {
 	@Test
 	void testListDatabaseTables() throws Exception {
 		List<String> tables = di.listDatabaseTables("ez_form_schema");
-		assertEquals(32, tables.size());
+		assertEquals(13, tables.size());
 		assertTrue(tables.contains("ezform"));
 		
-		assertEquals(383, di.listDatabaseTables(null).size());
+		assertEquals(13, di.listDatabaseTables(null).size());
 	}
 
 	

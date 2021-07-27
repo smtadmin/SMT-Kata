@@ -125,8 +125,8 @@ public class DatabaseIntro {
 		//Retrieving the meta data object
 	    DatabaseMetaData metaData = conn.getMetaData();
 	    
-	    //Retrieving the tab;es in the database
-	    ResultSet rs = metaData.getTables(null, schema, null, null);
+	    //Retrieving the tables in the database
+	    ResultSet rs = metaData.getTables(null, schema, null, new String[] {"TABLE"});
 	    
 	    while(rs.next()) {
 	    	data.add(rs.getString("TABLE_NAME"));
