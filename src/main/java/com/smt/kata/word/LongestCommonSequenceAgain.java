@@ -51,7 +51,7 @@ public class LongestCommonSequenceAgain {
 			Set<String> data = new HashSet<>(2048);
 			output = new StringBuilder();
 			combine(0, word, data);
-			
+			System.out.println(data);
 			// Add the set of combinations to the list
 			allSequences.add(data);
 		}

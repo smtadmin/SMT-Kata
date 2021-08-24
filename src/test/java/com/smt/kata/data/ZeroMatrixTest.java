@@ -77,6 +77,12 @@ class ZeroMatrixTest {
 		assertEquals(0, matrix[1][0]);
 		assertEquals(0, matrix[1][1]);
 		assertEquals(0, matrix[1][2]);
+		
+		// Check the middle
+	    assertEquals(1, matrix[0][0]);
+	    assertEquals(1, matrix[0][2]);
+	    assertEquals(1, matrix[2][0]);
+	    assertEquals(1, matrix[2][2]);
 	}
 	
 	/**
@@ -121,5 +127,11 @@ class ZeroMatrixTest {
 		// Make sure the top row inner is set to 0
 		assertEquals(0, matrix[0][1]);
 		assertEquals(0, matrix[0][2]);
+		
+		// Check the inners
+	    assertEquals(4, matrix[1][1]);
+	    assertEquals(5, matrix[1][2]);
+	    assertEquals(3, matrix[2][1]);
+	    assertEquals(1, matrix[2][2]);
 	}
 }
