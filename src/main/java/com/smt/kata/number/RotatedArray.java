@@ -1,6 +1,5 @@
 package com.smt.kata.number;
 
-
 /****************************************************************************
  * <b>Title</b>: RotatedArray.java
  * <b>Project</b>: SMT-Kata
@@ -25,6 +24,8 @@ package com.smt.kata.number;
  * 
  * Note:
  * if the target number is not in the array, return -1
+ * 
+ * **** No imports of any kind are allowed for this kata.
  * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
