@@ -3,6 +3,8 @@ package com.smt.kata.distance.bean;
 // JDK 11.x
 import java.io.Serializable;
 
+import com.smt.kata.util.HashCodeUtil;
+
 /****************************************************************************
  * <b>Title</b>: CoordinateVO.java
  * <b>Project</b>: SMT-Kata
@@ -32,10 +34,37 @@ public class CoordinateVO implements Serializable {
 	/**
 	 * Constructor.  Assigns coords
 	 */
-	public CoordinateVO(int x, int y) {
+	public CoordinateVO(int row, int column) {
 		this();
-		this.column = x;
-		this.row = y;
+		this.column = column;
+		this.row = row;
+	}
+	
+	/**
+	 * Outputs the value of this coordinate
+	 */
+	@Override
+	public String toString() {
+		return "Row[" + row + "] - Col[" + column + "]";
+	}
+	
+	/**
+	 * Compares the row and column values
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (! (o instanceof CoordinateVO)) return false;
+		CoordinateVO vo = (CoordinateVO) o;
+		
+		return row == vo.getRow() && column == vo.getColumn();
+	}
+	
+	/**
+	 * Adds the hashcode using the hashcode util for the row and column
+	 */
+	@Override
+	public int hashCode() {
+		return HashCodeUtil.hash(row) + HashCodeUtil.hash(column);
 	}
 	
 	/**
