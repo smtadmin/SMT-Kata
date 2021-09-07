@@ -78,7 +78,7 @@ public class OpenTheLock {
         // initialize moves
         int moves = 0;
 
-        // add neighbours while queue is not empty
+        // add neighbors while queue is not empty
         while(!queue.isEmpty()){
             int size = queue.size();
             
@@ -95,7 +95,7 @@ public class OpenTheLock {
                 // add to visited if not already visited
                 visited.add(currentPosition);
 
-                // check if current position is the ans
+                // check if current position is the answer
                 if (currentPosition.equals(target)) return moves;
 
                 // add to the queue all the neighbours of current position

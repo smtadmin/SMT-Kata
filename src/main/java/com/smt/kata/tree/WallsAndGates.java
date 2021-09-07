@@ -8,7 +8,7 @@ package com.smt.kata.tree;
  * You are given a m x n 2D grid initialized with these three possible values.
  * 
  * -1 - A wall or an obstacle.
- * 0 - A gate.
+ *  0 - A gate.
  * INF - Infinity means an empty room. We use the value 231 - 1 = 2147483647 to r
  *       epresent INF as you may assume that the distance to a gate is less than 2147483647.
  * 
