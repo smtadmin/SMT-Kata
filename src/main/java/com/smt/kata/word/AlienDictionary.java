@@ -81,15 +81,15 @@ public class AlienDictionary {
 	 */
 	public boolean isSorted(String[] words) {
 		if (words == null || words.length < 2) return false; 
-		int length = getMaxLength(words);
-		long previous = 0;
+		String previous = "";
 		
 		// Loop each word and encode the values.  if the value is less than the previous
 		// Value, return false.  Otherwise, keep checking
 		for (String word : words) {
 			if (StringUtil.isEmpty(word)) continue;
-			long value = encode(word.toLowerCase(), length);
-			if (value < previous) return false;
+			
+			String value = encode(word.toLowerCase());
+			if (!StringUtil.isEmpty(previous) && value.compareTo(previous) < 0) return false;
 			previous = value;
 		}
 		
@@ -104,33 +104,18 @@ public class AlienDictionary {
 	 * number of digits
 	 * @return Encoded digits
 	 */
-	private long encode(String word, int length) {
+	private String encode(String word) {
 		StringBuilder s = new StringBuilder();
 		
 		// Loop each word and find the index of its character.  If the index is > 9, 
 		// Increment the length as the index is 2 digits
 		for (char c : word.toCharArray()) {
 			int loc = dict.indexOf(Character.valueOf(c)) + 1;
-			if (loc > 9) length++;
-			s.append(loc);
+			s.append(StringUtil.padLeft(loc+"", '0', 2));
 		}
 		
 		// Pad the data to the length so shorter words will end in all 0000s and 
 		// The length of each encoded word will be the same
-		return Long.valueOf(StringUtil.padRight(s.toString(), '0', length));
-	}
-	
-	/**
-	 * Gets the length of the longest word
-	 * @param words All of the words to be checked
-	 * @return Length of the longest word
-	 */
-	private int getMaxLength(String[] words) {
-		int maxLength = 0;
-		for (String word : words) {
-			if (word != null && word.length() > maxLength) maxLength = word.length();
-		}
-		
-		return maxLength;
+		return s.toString();
 	}
 }
