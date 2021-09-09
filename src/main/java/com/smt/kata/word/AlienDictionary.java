@@ -114,8 +114,6 @@ public class AlienDictionary {
 			s.append(StringUtil.padLeft(loc+"", '0', 2));
 		}
 		
-		// Pad the data to the length so shorter words will end in all 0000s and 
-		// The length of each encoded word will be the same
 		return s.toString();
 	}
 }
