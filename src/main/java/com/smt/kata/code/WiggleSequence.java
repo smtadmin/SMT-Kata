@@ -1,5 +1,9 @@
 package com.smt.kata.code;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /****************************************************************************
  * <b>Title</b>: WiggleSequence.java
  * <b>Project</b>: SMT-Kata
@@ -16,15 +20,32 @@ public class WiggleSequence {
 
 	
 	public int count(int[] sequence) {
-		int counter = 1;
-		for (int i = 0; i < sequence.length - 1; i++) {
-			int val = sequence[i];
+		List<Integer> wiggle = new ArrayList<>();
+		System.out.println(Arrays.toString(sequence));
+		boolean isClear = true;
+		boolean higher = true;
+		int val = 0;
+		for (int i=0; i < sequence.length - 1; i++) {
+			
+			if(isClear) val = sequence[i];
 			int nextVal = sequence[i + 1];
 			
-			if ((i % 2) == 0 && nextVal > val) counter++;
-			else if ((i % 2) == 1 && nextVal < val) counter++;
+			if (higher && nextVal > val) {
+				if(! wiggle.contains(val)) wiggle.add(val);
+				if(! wiggle.contains(nextVal)) wiggle.add(nextVal);
+				higher = false;
+				isClear = true;
+			} else if (! higher && nextVal < val) {
+				if(! wiggle.contains(val)) wiggle.add(val);
+				if(! wiggle.contains(nextVal)) wiggle.add(nextVal);
+				higher = true;
+				isClear = true;
+			} else {
+				isClear = false;
+			}
 		}
-		
-		return counter;
+		System.out.println(wiggle);
+		System.out.println("============================");
+		return wiggle.size();
 	}
 }
