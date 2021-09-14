@@ -1,7 +1,7 @@
 package com.smt.kata.code;
 
+// Junit 5
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
 /****************************************************************************
@@ -25,6 +25,22 @@ class WiggleSequenceTest {
 	 * Test method for {@link com.smt.kata.code.WiggleSequence#count(int[])}.
 	 */
 	@Test
+	void testCountNull() throws Exception {
+		assertEquals(0, ws.count(null));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.code.WiggleSequence#count(int[])}.
+	 */
+	@Test
+	void testCountEmpty() throws Exception {
+		assertEquals(0, ws.count(new int[0]));
+	}
+	
+	/**
+	 * Test method for {@link com.smt.kata.code.WiggleSequence#count(int[])}.
+	 */
+	@Test
 	void testCountAll() throws Exception {
 		assertEquals(6, ws.count(new int[] {1,7,4,9,2,5}));
 	}
@@ -34,7 +50,7 @@ class WiggleSequenceTest {
 	 */
 	@Test
 	void testCountPartial() throws Exception {
-		assertEquals(6, ws.count(new int[] {1,17,5,10,13,15,10,5,16,8}));
+		assertEquals(7, ws.count(new int[] {1,17,5,10,13,15,10,5,16,8}));
 	}
 
 	/**
