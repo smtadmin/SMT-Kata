@@ -61,9 +61,9 @@ public class RearrangeWords {
 	 * @param word Word to find permutations
 	 */
 	protected void findPermutations(String prev, String word, Set<String> items) {
-        if (word.isEmpty() && hasNoRepeatingChars(prev + word)) {
+		if (word.isEmpty() && hasNoRepeatingChars(prev + word)) {
         	items.add(prev + word);
-        } else {
+        } else if (hasNoRepeatingChars(prev)) {
             for (int i = 0; i < word.length(); i++) {
             	String temp = word.substring(0, i) + word.substring(i + 1, word.length());
             	findPermutations(prev + word.charAt(i), temp, items);
