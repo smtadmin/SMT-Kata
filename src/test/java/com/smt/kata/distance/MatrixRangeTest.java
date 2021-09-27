@@ -79,10 +79,10 @@ class MatrixRangeTest {
 	 */
 	@Test
 	void testGetNumberElementsOutOfRange() throws Exception {
-		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(-3, 3), new CoordinateVO(3, 30)));
-		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(3, -3), new CoordinateVO(30, 3)));
-		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(3, 30), new CoordinateVO(-3, 3)));
-		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(30, 3), new CoordinateVO(3, -3)));
+		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(-3, 3), new CoordinateVO(30, 3)));
+		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(3, -3), new CoordinateVO(3, 30)));
+		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(3, 30), new CoordinateVO(3, -3)));
+		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(30, 3), new CoordinateVO(-3, 3)));
 	}
 	
 	/**
@@ -106,7 +106,7 @@ class MatrixRangeTest {
 	 */
 	@Test
 	void testGetNumberElementsNone() throws Exception {
-		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(0, 0), new CoordinateVO(5, 4)));
+		assertEquals(0, mr.getNumberElements(matrix, new CoordinateVO(0, 0), new CoordinateVO(4, 5)));
 	}
 	
 	/**
@@ -114,6 +114,6 @@ class MatrixRangeTest {
 	 */
 	@Test
 	void testGetNumberElementsMost() throws Exception {
-		assertEquals(28, mr.getNumberElements(matrix, new CoordinateVO(3, 2), new CoordinateVO(3, 2)));
+		assertEquals(28, mr.getNumberElements(matrix, new CoordinateVO(2, 3), new CoordinateVO(2, 3)));
 	}
 }

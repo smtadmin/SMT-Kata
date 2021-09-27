@@ -2,7 +2,10 @@ package com.smt.kata.object;
 
 // JDK 11.x
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /****************************************************************************
  * <b>Title</b>: MatchstickToSquare.java
@@ -47,15 +50,11 @@ public class MatchstickToSquare {
 		if (matchsticks == null || matchsticks.length < 4) return false;
 		
 		// Create a collection of match sticks and used slots
-		List<Integer> sticks = new ArrayList<>();
+		List<Integer> sticks = Arrays.stream(matchsticks).boxed().collect(Collectors.toList());
 		List<Integer> used = new ArrayList<>();
 		
 		// Get the total of the values and add the array values into a list
-		int total = 0;
-		for (int stick : matchsticks) {
-			total += stick;
-			sticks.add(stick);
-		}
+		int total = IntStream.of(matchsticks).sum();
 		
 		// Check for modulus 4 as we need to have a subset of 4 in the total
 		if (total % 4 != 0) return false;

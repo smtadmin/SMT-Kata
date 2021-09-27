@@ -1,5 +1,8 @@
 package com.smt.kata.distance;
 
+// JDK 11.x
+import java.util.Arrays;
+
 /****************************************************************************
  * <b>Title</b>: MinimumMovesEqual.java
  * <b>Project</b>: SMT-Kata
@@ -41,16 +44,34 @@ public class MinimumMovesEqual {
 		// Validate the incoming data.  Return 0 if invalid
 		if (elements == null || elements.length < 2) return 0;
 
-		// Calculate the total and the average for the numbers in the array
-		int total = 0;
-		for(int ele : elements) total += ele;
-		int avg = total / elements.length;
-		System.out.println("Vals: " + total + "|" + avg);
+		// Calculate the median for the numbers in the array
+		int avg = median(elements);
+		
 		// Calculate the moves by finding the difference for each item in the 
 		// array to the average
 		int moves = 0;
 		for (int ele : elements) moves += Math.abs(avg - ele);
 		
 		return moves;
+	}
+	
+	/**
+	 * Calculate the median value for the provided int[]
+	 * @param scores Array of numeric values to calculate against
+	 * @return Median value of the array values
+	 */
+	private int median(int[] scores) {
+		// Sort the scores
+	      Arrays.sort(scores);
+	 
+	      // Calculate median (middle number)
+	      double median = 0;
+	      double pos1 = Math.floor((scores.length - 1.0) / 2.0);
+	      double pos2 = Math.ceil((scores.length - 1.0) / 2.0);
+	      if (pos1 == pos2 ) median = scores[(int)pos1];
+	      else median = (scores[(int)pos1] + scores[(int)pos2]) / 2.0 ;
+	      
+	      // Convert to int and return
+	      return (int) Math.ceil(median);
 	}
 }

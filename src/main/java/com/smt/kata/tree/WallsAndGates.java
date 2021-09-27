@@ -8,9 +8,9 @@ package com.smt.kata.tree;
  * You are given a m x n 2D grid initialized with these three possible values.
  * 
  * -1 - A wall or an obstacle.
- * 0 - A gate.
- * INF - Infinity means an empty room. We use the value 231 - 1 = 2147483647 to r
- *       epresent INF as you may assume that the distance to a gate is less than 2147483647.
+ *  0 - A gate.
+ * INF - Infinity means an empty room. We use the value 231 - 1 = 2147483647 to represent 
+ * INF as you may assume that the distance to a gate is less than 2147483647.
  * 
  * Fill each empty room with the distance to its nearest gate. If it is impossible 
  * to reach a gate, it should be filled with INF.
@@ -64,11 +64,11 @@ public class WallsAndGates {
     }
 	
 	/**
-	 * 
-	 * @param rooms
-	 * @param row
-	 * @param col
-	 * @param distance
+	 * Recursive method to check every location's path in all four directions
+	 * @param rooms Matrix array
+	 * @param row Row index of the gate
+	 * @param col Column index of the gate
+	 * @param distance Steps fomr the gate
 	 */
 	protected void dfs(int[][] rooms, int row, int col, int distance) {
         //if you have gone out of the bounds of the array or you have run into a wall/obstacle, return
