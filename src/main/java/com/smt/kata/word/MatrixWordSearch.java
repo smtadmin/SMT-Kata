@@ -108,7 +108,7 @@ public class MatrixWordSearch {
 			return;
 		}
 		
-		// Add the cell to the visited set and inmcrement the index
+		// Add the cell to the visited set and increment the index
 		visited.add(cell);
 		index++;
 		
