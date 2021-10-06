@@ -1,5 +1,6 @@
 package com.smt.kata.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /****************************************************************************
@@ -50,4 +51,35 @@ public class Helpers {
         }
 
     }
+	
+	/**
+	 * Recursive method to calculate all combinations in the array of the given size
+	 * @param arr Source Array
+	 * @param data Elements in the array to be matched
+	 * @param start Start index
+	 * @param end End Index
+	 * @param index Index of the element being retrieved fromt he source
+	 * @param r Size of the returned elements
+	 * @param res All matching elements
+	 */
+	protected void findCombos(int arr[], int data[], int start, int end, int index, int r, List<List<Integer>> res) {
+		// Current combination is ready to be printed, print it
+		if (index == r) {
+			List<Integer> temp = new ArrayList<>();
+			for (int j = 0; j < r; j++) {
+				temp.add(data[j]);
+			}
+			res.add(temp);
+			return;
+		}
+
+		// replace index with all possible elements. The condition
+		// "end-i+1 >= r-index" makes sure that including one element
+		// at index will make a combination with remaining elements
+		// at remaining positions
+		for (int i = start; i <= end && end - i + 1 >= r - index; i++) {
+			data[index] = arr[i];
+			findCombos(arr, data, i + 1, end, index + 1, r, res);
+		}
+	}
 }
