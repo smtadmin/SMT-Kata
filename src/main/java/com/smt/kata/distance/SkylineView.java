@@ -14,7 +14,10 @@ package com.smt.kata.distance;
  * the top floors of the buildings with heights 8, 6, and 1 all have an unobstructed 
  * view to the west.
  * 
- * Can you do this using just one forward pass through the array and one backwards?
+ * -----------------------------------------------------------------------------
+ * Can you do this using just one backwards pass through the array?
+ * Can you do this using just one forward pass through the array?
+ * -----------------------------------------------------------------------------
  * 
  * <b>Copyright:</b> Copyright (c) 2021
  * <b>Company:</b> Silicon Mountain Technologies
