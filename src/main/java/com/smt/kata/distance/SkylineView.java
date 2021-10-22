@@ -64,14 +64,15 @@ public class SkylineView {
 		int prev = 0;
 		int numViews = 1;
 		for (int height : buildings) {
+			
 			if (height >= highestPoint) {
 				numViews = 1;
 				highestPoint = height;
-			} else if (height < prev) {
+				prev = height;
+			} else if (prev > height){
 				numViews++;
+				prev = height;
 			}
-			
-			prev = height;
 		}
 		
 		return numViews;
