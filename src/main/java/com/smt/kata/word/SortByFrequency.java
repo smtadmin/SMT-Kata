@@ -54,7 +54,6 @@ public class SortByFrequency {
 
 		return IntStream.range(0,word == null ? 0 : word.length())
 				 .mapToObj(i -> StringUtil.defaultString(word).toLowerCase().charAt(i))
-				 .sorted()
 				 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 				 .entrySet()
 				 .stream()
