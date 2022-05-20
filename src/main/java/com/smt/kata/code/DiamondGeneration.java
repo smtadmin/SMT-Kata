@@ -1,5 +1,8 @@
 package com.smt.kata.code;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Problem Description
@@ -30,10 +33,56 @@ public class DiamondGeneration {
 	/**
 	 * Generates List of Strings consisting of diamond pattern for given
 	 * character 
-	 * @param l
+	 * @param l Target Diamond Letter.
 	 * @return
 	 */
 	public List<String> generateDiamond(Character l) {
-		return null;
+
+		///Create List
+		List<String> diamond = new ArrayList<>();
+
+		///Validate Input
+		if(l == null || !((l.charValue() >= 'a' && l.charValue() <= 'z') || (l.charValue() >= 'A' && l.charValue() <= 'Z'))) {
+			return diamond;
+		}
+
+		///Upcast to Capital Letter 
+		l = Character.toUpperCase(l.charValue());
+
+		///Loops over characters and build the diamond.
+		for(char c = l; c >= 'A'; c--) {
+
+			///Generate the Diamond String
+			String d = generateString(c, l);
+
+			///Add to the diamond list.
+			diamond.add(d);
+
+			///Push to the stack if this isn't the target letter.
+			if(c != l) {
+				diamond.add(0, d);
+			}
+		}
+
+		return diamond;
 	}
+
+	/**
+	 * Generate the String representation for a row of the diamond.
+	 * @param c Target letter we're generating
+	 * @param l End letter of the diamond.
+	 * @return
+	 */
+	private String generateString(char c, Character l) {
+		final int diffChars = l - c;
+		final int totalChars = (l.charValue() - 'A') * 2 + 1;
+		return IntStream
+				.range(0, totalChars)
+				.boxed()
+				.map(i -> (i == totalChars - diffChars - 1 || i == diffChars) ? Character.valueOf(c).toString() : " ")
+				.collect(Collectors.joining());
+
+	}
+	
+	
 }
